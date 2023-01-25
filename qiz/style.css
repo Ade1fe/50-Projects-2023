@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins', sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  /* justify-content: center; */
+  align-items: center;
+  background-image: linear-gradient(to right, #243748,  #4b749f);
+  background-color: #cccccc; 
+  min-height: 100vh; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  justify-content: center;
+  /* background-color: rgba(137, 43, 226, 0.646); */
+
+
+
+}
+
+/* .homePage{
+  background-image: url(/brain.jpg); 
+  background-color: #cccccc; 
+  min-height: 100vh; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  justify-content: center;
+
+
+} */
+h1{
+  width: 70%;
+  /* border: 3px solid black; */
+  padding: 10px;
+  text-align: center;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+a{
+  color: #243748;
+  text-decoration: none;
+  margin: 0px 10px;
+}
+
+
+.buttons{
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.btn{
+  padding: 10px;
+  color: #243748;
+  border-radius: 5PX;
+  outline: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn:hover{
+  border: #efb7ea 3px solid;
+  padding: 20px;
+}
+
+.card {
+  display: none;
+  background-color: white;
+  padding: 20px;
+  /* width: 90%; */
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+#exit{
+  display: none;
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+}
+.card-header {
+  margin: 10px;
+  color: blueviolet;
+}
+
+hr {
+  width: 75%;
+  margin: auto;
+}
+
+.card-body {
+  margin: 20px;
+  margin-bottom: 50px;
+}
+
+.card-body .card-title {
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card-body ul li {
+  list-style: none;
+  padding: 5px;
+}
+
+.answer {
+  accent-color: blueviolet;
+}
+
+.card-footer .btn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 13px;
+  width: 100%;
+  border: none;
+  background-color: blueviolet;
+  color: white;
+  font-size: 18px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.card-footer .btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

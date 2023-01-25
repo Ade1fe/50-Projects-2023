@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <div id="homepage" class="homePage">
+    <h1>
+      <span>A</span>
+      <span>D</span>
+      <span>E</span>
+      <span>I</span>
+      <span>F</span>
+      <span>E</span>
+      <span>Q</span>
+      <span>U</span>
+      <span>I</span>
+      <span>Z</span>
+  
+    </h1>
+   <div class="buttons">
+    <button  id="start" onclick = "show()" class="btn" > START</button>
+    <button class="instruct btn"><a href="instruction.html">INSTRUCTION</a></button>
+     <button id="exit2" class="exit btn">EXIT</button>
+   </div>
+
+  </div>
+  <button id="exit" class="exit btn">EXIT</button>
+  <div id="card"  class="card">
+    <div class="card-header">
+      <h2 id="news">Quiz App</h2>
+    </div>
+    <hr />
+    <div id="card-body" class="card-body">
+      <h2 id="question" class="card-title">Question</h2>
+      <ul>
+        <li>
+          <input type="radio" id="a" name="answer" class="answer" />
+          <label for="a" id="aText">Question</label>
+        </li>
+        <li>
+          <input type="radio" id="b" name="answer" class="answer" />
+          <label for="b" id="bText">Question</label>
+        </li>
+        <li>
+          <input type="radio" id="c" name="answer" class="answer" />
+          <label for="c" id="cText">Question</label>
+        </li>
+        <li>
+          <input type="radio" id="d" name="answer" class="answer" />
+          <label for="d" id="dText">Question</label>
+        </li>
+      </ul>
+    </div>
+    <div class="card-footer">
+      <button id="submit" class="btn">Submit</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>

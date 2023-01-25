@@ -1,0 +1,89 @@
+body{
+
+}
+.main-container{
+    text-align: center;
+    padding: 0.5rem;
+    margin: auto;
+    margin: 0.5rem;
+    border: 1px solid #ff7429;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.circle {
+    margin: auto;
+    height: auto;
+    padding:20% 10%;
+    /* white-space:nowrap ; */
+    width: 25%;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    border: 7px solid #ff7426;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    
+ }
+
+ 
+ 
+ /* CSS */
+ .button-7 {
+   background-color: #ff7426;
+   border: 1px solid transparent;
+   border-radius: 3px;
+   box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+   box-sizing: border-box;
+   color: #fff;
+   cursor: pointer;
+   display: inline-block;
+   font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+   font-size: 13px;
+   font-weight: 400;
+   line-height: 1.15385;
+   margin: 5px;
+   outline: none;
+   padding: 8px .8em;
+   position: relative;
+   text-align: center;
+   text-decoration: none;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   vertical-align: baseline;
+   white-space: nowrap;
+ }
+ 
+ .button-7:hover,
+ .button-7:focus {
+   background-color: #075555;
+ }
+ 
+ .button-7:focus {
+   box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+ }
+ 
+ .button-7:active {
+   background-color: #075555;
+   box-shadow: none;
+ }
+
+@media(max-width:590px){
+    .main-container{
+        margin-top: 7rem;
+        padding:0.5rem 0.1rem;
+    }
+   .circle{
+    /* margin: auto; */
+    height: auto;
+    padding:10px;
+    border-radius: 0;
+    font-size: 25px;
+    width: 70%;
+    font-weight: 700;
+    text-align: center;
+    border: 3px solid #ff7426;
+   }
+    .button-78{
+        margin: 6px;
+    }
+}
