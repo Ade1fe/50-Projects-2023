@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+<body>
+  
+
+   <!-- login page -->
+        <div id="login" class="login-box">
+            <h2>Login</h2>
+            <div class="form">
+              <div class="user-box">
+                <input id="user" type="text" name="" required>
+                <label>Name</label>
+              </div>
+              <div class="user-box">
+                <input id="email" type="email" name="" required>
+                <label>Email</label>
+              </div>
+              <button id="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Submit
+              </button>
+            </div>
+          </div>
+
+  <section class="container" id="myDisplayContainer">
+
+    <div class="title">
+      <h2 id="greeting"></h2>
+      <h3 id="emailL"></h3>
+      <h4 id="date"></h4>
+  </div>
+  
+    <div class="link">
+      <p>Please Clear History Before You leave</p>
+      <a href="./file.html">Create A file</a>
+    </div>
+    
+    <div class="new-task-container box">
+    <textarea id="new-task" name="" placeholder="What would you like to do today?..." class="result" ></textarea>
+      <button id="addTask"  class="button-85" role="button">Add Task</button>
+      
+    </div>
+  
+    <div class="listContainer">
+      <div class="grid-con">
+        <div class="todo-list box">
+    
+          <h2>All Tasks</h2>
+          <ul>
+          </ul>
+        
+        </div><!--/todo-list-->
+  
+        <input id="searchbar" onkeyup="search_animal()" type="text"
+        name="search" placeholder="Search Todos..">
+        
+        <div class="complete-list box">
+          
+          <h2>Completed Tasks</h2>
+          <ul>
+          </ul>
+          
+          
+        </div><!--/complete-list-->
+      </div>
+
+
+   <div class="clearSection">
+    <ul id="myList">
+      <h2 class="h2">Tasks History</h2>
+      
+    </ul>
+    <button type="button" role="button" class="btnClear button-16">Clear Tasks History</button>
+   </div>
+    </div>
+
+    
+    
+    
+    <!-- <div class="allTasks" id="allTasks"> -->
+        <!-- <ul>
+          <li></li>
+        </ul> -->
+         
+          
+       
+    <!-- </div> -->
+
+   
+       
+    
+    
+  </section><!--/container-->
+    <script src="index.js"></script>
+</body>
+</html>
