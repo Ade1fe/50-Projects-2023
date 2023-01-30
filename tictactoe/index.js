@@ -1,224 +1,102 @@
-function TicTacToe(placeholder, grid_size, callback) {
+const play = document.getElementById("play");
 
-	// Save the placeholder element 
-	this.placeholder = placeholder;
+$("#sect").hide();
+play.addEventListener("click", ()=>{
+    $("#sect").show();
+    $("#play").hide();
+})
 
-	// Paint the placeholder with board
-	this.paint(grid_size);
+const boxs=document.querySelectorAll('.box');
+const statusTxt=document.querySelector('#status');
+const btnRestart=document.querySelector('#restart');
+let x ="x";
+let o = "o";
 
-	// Save the callback
-	this.callback = callback;
 
-	// Save player scores
-	this.scores = {
-		X: 0,
-		O: 0
-	};
 
-	this.marks = {
-		X: "X",  // Player 1 mark
-		O: "O",  // Player 2 mark
-		count: 0 // Number of moves made by player
-	};
+const win=[
+  [0,1,2],
+  [3,4,5],
+  [6,7,8],
+  [0,3,6],
+  [1,4,7],
+  [2,5,8],
+  [0,4,8],
+  [2,4,6]
+];
 
-	return this;
+let options=["","","","","","","","",""];
+let currentPlayer=x;
+let player="X";
+let running=false;
+init();
+
+function init(){
+  boxs.forEach(box=>box.addEventListener('click',boxClick));
+  btnRestart.addEventListener('click',restartGame);
+  statusTxt.textContent=`${player} Your Turn`;
+  running=true;
 }
 
-TicTacToe.prototype.paint = function(grid_size) {
-
-	var self = this;
-
-	// Get number of columns, considering board as N x N board (3 x 3)
-	self.grid_size = grid_size;
-
-	var html = '<table id="tic-tac-toe" align="center">';
-	
-	for(var i = 0; i < grid_size; i++) {
-		html += '<tr>';
-		for(var j = 0; j < grid_size; j++) {
-			html+= '<td></td>';
-		}
-		html += '</tr>';
-	}
-
-	html += '</table>';
-	
-	self.placeholder.innerHTML = html;
-
-	// Find all columns from the board
-	self.columns = self.placeholder.getElementsByTagName("td");
-
-	// Go through all the columns and add click event
-	for(i = 0; i < this.columns.length; i++) {
-		self.columns[i].addEventListener("click", markHandler);
-	}
-
-	// on click mark the column "<td>"
-	function markHandler(e) {
-		self.mark(e.target);
-	}
-
-};
-
-TicTacToe.prototype.mark = function(column) {
-
-	// Stop if column is not empty
-	if(column.innerHTML) {
-		return;
-	}
-
-	// Count the move
-	this.marks.count++;
-
-	// Get the mark based on the count
-	var current_mark = this.marks.count % 2 === 1 ? this.marks.X : this.marks.O;
-
-	// Fill the column with mark
-	column.innerHTML = current_mark;
-	column.classList.add(current_mark);
-
-	// Check if this player (X or O) won
-	if(this.didWin(current_mark)) {
-		// Increment the player score
-		if(this.marks.count % 2 === 1) {
-			this.scores.X++;
-		} else {
-			this.scores.O++;
-		}
-		// Send current mark and scores
-		this.callback(current_mark, this.scores);
-	} else if(this.marks.count === this.columns.length) {
-		// Send result as draw
-		this.callback("draw");
-	}
-
-};
-
-//  Board:
-//  _____________
-//	| 0 | 1 | 2 |
-//  |---|---|---|
-//  | 3 | 4 | 5 |
-//	|---|---|---|
-//	| 6 | 7 | 8 |
-//  -------------
-// 
-// We need to go through all columns like
-// 
-// 012, 345, 678 - Horizontal
-// 036, 147, 258 - Vertical
-// 048, 246      - Diagonal
-//
-// If mark is present in all columns of any combinations then user won
-//
-// Instead of going through each combination manually we can make use of loops,
-// So that it can be used for any grids like 7 X 7
-//
-
-TicTacToe.prototype.didWin = function(mark) {
-
-	// Take count of columns
-	var grid_size = this.grid_size;
-
-	// Declare variables to count the presence of the mark
-	var horizontal_count,
-		vertical_count,
-		right_to_left_count = 0,
-		left_to_right_count = 0;
-
-
-	// Loop 1
-	for(var i = 0; i < grid_size; i++) {
-
-		// Empty the count
-		horizontal_count = vertical_count = 0;
-
-		// Loop 2
-		for(var j = 0; j < grid_size; j++) {
-
-			// i * grid_size + j ===> "0,1,2", "3,4,5", "6,7,8"
-			if(this.columns[i * grid_size + j].innerHTML == mark) {
-				horizontal_count++;
-			}
-
-			// j * grid_size + i ===> "0,3,6", "1,4,7", "2,5,8"
-			if(this.columns[j * grid_size + i].innerHTML == mark) {
-				vertical_count++;
-			}
-
-		}
-
-		// If horizontal or vertical combination is found the return true
-		if(horizontal_count == grid_size || vertical_count == grid_size) {
-			return true;	
-		}
-
-		// i * grid_size + i ===> "0,4,8"
-		if(this.columns[i * grid_size + i].innerHTML == mark) {
-			right_to_left_count++;
-		}
-
-		// (grid_size - 1) * (i+1) ===> "2,4,6"
-		if(this.columns[(grid_size - 1) * (i+1)].innerHTML == mark) {
-			left_to_right_count++;
-		}
-
-	} // End of loop
-
-	// If mark is present diagnolly
-	if(right_to_left_count == grid_size || left_to_right_count == grid_size) {
-		return true;	
-	}
-
-	return false;
-};
-
-TicTacToe.prototype.empty = function() {
-	// Go through all columns and empty them
-	for(var i = 0; i < this.columns.length; i++) {
-		this.columns[i].innerHTML = '';
-		this.columns[i].classList.remove(this.marks.X);
-		this.columns[i].classList.remove(this.marks.O);
-
-	}
-	// Reset the count
-	this.marks.count = 0;
-};
-
-TicTacToe.prototype.reset = function() {
-	this.empty();
-	this.scores = {
-		X: 0,
-		O: 0
-	};
-};
-
-
-
-
-var placeholder = document.getElementById("placeholder");
-
-var tictactoe = new TicTacToe(placeholder, 3, onResult);
-
-function onResult(result, scores) {
-	if(result == 'draw') {
-		alert("It's a draw !");
-	} else {
-		alert(result + " has won");
-		updateScores(scores.X, scores.O);
-	}
-	tictactoe.empty();
+function boxClick(){
+  const index=this.dataset.index;
+  if(options[index]!="" || !running){
+    return;
+  }
+  updateBox(this,index);
+  checkWinner();
 }
 
-function updateScores(X, O) {
-	document.querySelector("#scoreboard #player1").innerHTML = X;
-	document.querySelector("#scoreboard #player2").innerHTML = O;	
+function updateBox(box,index){
+  options[index]=player;
+  box.innerHTML=currentPlayer;
 }
 
-function restart(grid_size) {
-	tictactoe.reset();
-	updateScores(0, 0);
-	if(grid_size) {
-		tictactoe.paint(grid_size);
-	}
+function changePlayer(){
+    player=(player=='X') ? "O" :"X";
+    currentPlayer=(currentPlayer==x) ? o :x;
+    statusTxt.textContent=`${player} Your Turn`;
+}
+
+function checkWinner(){
+  let isWon=false;
+  for(let i=0;i<win.length;i++){
+    const condition=win[i]; //[0,1,2]
+    const box1=options[condition[0]]; //x
+    const box2=options[condition[1]]; //''
+    const box3=options[condition[2]]; //''
+    if(box1=="" || box2=="" || box3==""){
+      continue;
+    }
+    if(box1==box2 && box2==box3){
+      isWon=true;
+      boxs[condition[0]].classList.add('win');
+      boxs[condition[1]].classList.add('win');
+      boxs[condition[2]].classList.add('win');
+    }
+  }
+
+  if(isWon){
+    statusTxt.textContent=`${player} Won..`;
+    running=false;
+  }else if(!options.includes("")){
+    statusTxt.textContent=`Game Draw..!`;
+    running=false;
+  }else{
+    changePlayer();
+  }
+
+}
+
+function restartGame(){
+  options=["","","","","","","","",""];
+  currentPlayer=x;
+  player="X";
+  running=true;
+  statusTxt.textContent=`${player} Your Turn`;
+
+  boxs.forEach(box=>{
+      box.innerHTML="";
+      box.classList.remove('win');
+  });
 }

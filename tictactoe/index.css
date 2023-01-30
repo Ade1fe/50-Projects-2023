@@ -1,56 +1,63 @@
-body {
-    font: normal 16px comic sans ms;
-    text-align: center;
-  }
-  
-  #tic-tac-toe {
-    cell-spacing: 0px;
-    border-spacing: 0px;
-    border-collapse: separate;
-    margin: 30px auto;
-  }
-  
-  #tic-tac-toe td {
-    border: 2px solid #000;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: #2f3542;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#sect{
+    width: 90%;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+button{
+    padding: 30px;
+    font-size: 18px;
+    color:white;
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+}
+.box{
     height: 100px;
-    width: 100px;
-    text-align: center;
-    font: bold 60px comic sans ms;
+    border: 2px solid rebeccapurple;
+    box-shadow: 0 0 0 2px #eccc68;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 25px;
   }
+  #status{
+    margin: 20px;
+  }
+  #restart{
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: rebeccapurple;
+}
+.win{
+    animation: winAnimation ease-in-out 1s infinite;
+}
+
+@keyframes winAnimation {
+  0%{background-color: #236eb5;}
+  100%{background-color: #4d469c;}
   
-  #tic-tac-toe tr:first-child td {
-    border-top: none
-  }
-  
-  #tic-tac-toe tr:last-child td {
-    border-bottom: none
-  }
-  
-  #tic-tac-toe tr td:first-child {
-    border-left: none;
-  }
-  
-  #tic-tac-toe tr td:last-child {
-    border-right: none;
-  }
-  
-  #tic-tac-toe td.X {
-    color: #ED676B; 
-  }
-  
-  #tic-tac-toe td.O {
-    color: #23916B;
-  }
-  
-  #scoreboard .score {
-    text-align: center;
-    font-size: 30px
-  }
-  
-  #scoreboard .score#player1 {
-    color: #ED676B;
-  }
-  
-  #scoreboard .score#player2 {
-    color: #23916B;
-  }
+}
