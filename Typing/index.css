@@ -1,0 +1,93 @@
+
+body {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    color: #fff;
+    background-color: #D3AB9E;
+    background-image: url('./shridhar-thorat-6AKLKt-KmdY-unsplash.jpg');
+}
+.mainContainer {
+    text-align: center;
+    animation: fadeInAnimation ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    width: 90%;
+    padding: 0.5rem;
+}
+.secContainer{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+.a {
+    color: antiquewhite;
+    background-color: transparent;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    animation: blinking 1.5s infinite;
+    font-size: 20px;
+    margin-top: 0.7rem;
+    border: none;
+
+   
+}
+textarea{
+    resize: none;
+    padding: 0.5rem;
+    width: 90%;
+    background-color: transparent;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+.main-container{
+    width: 90%;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+@keyframes blinking {
+    0% {
+        color: green;
+    }
+
+    47% {
+        color: #D3AB9E;
+    }
+
+    62% {
+        color: #fff;
+    }
+
+    97% {
+        color: #345678;
+    }
+
+    100% {
+        color: #6789;
+    }
+}
+
+p {
+    text-align: center;
+    word-break: keep-all;
+    padding: 0.5rem;
+    width: 70%;
+    margin: auto;
+}
+
+span {
+    color: green;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

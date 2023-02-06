@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="mainContainer">
+      <div class="container">
+        <h1>Adeife's Typing Speed Test⌨️</h1>
+        <h2>30 ⏱️seconds for 20 Sentences</h2>
+        <p>
+          After Completing each sentence kindly press or click on the
+          <span>Next Sentence</span> Button. <br />
+          <span>P.S</span> You need to click the <span>Textarea</span> to
+          validate your input. <br />
+          CountDown begins when the TextArea is clicked. <br />At the end of the
+          Countdown Your <span>Average</span> will be displayed. <br />Thats all
+          {Happy Typing Friend}
+        </p>
+        <button class="a" onclick="hideFirstContainer()">Start Now</button>
+      </div>
+    </section>
+
+    <div class="display">
+      <h2 id="timeUp"></h2>
+      <h2 id="averageSum"></h2>
+    </div>
+
+    <section class="main-container">
+      <div class="secContainer">
+        <div>
+          <h3 id="seconds">Seconds</h3>
+        </div>
+
+        <div>
+          <h3 id="accuracy">Accuracy</h3>
+        </div>
+
+        <div>
+          <h3 id="question">Question</h3>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="textContainer">Click TextArea to Begin</h3>
+      </div>
+
+      <div class="textField">
+        <textarea
+          name=""
+          placeholder="Text here"
+          id="area"
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+
+      <br />
+      <div id="result"></div>
+      <br />
+      <button onclick="startGame()" id="run" class="a">Next Sentence</button>
+    </section>
+
+    <!-- onkeypress="return enterKeyPressed(event)" -->
+
+    <script src="index.js"></script>
+  </body>
+</html>
