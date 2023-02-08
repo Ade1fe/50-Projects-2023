@@ -1,0 +1,119 @@
+
+.form-style-8 {
+    font-family: 'Open Sans Condensed', arial, sans;
+    max-width: 700px;
+    width: 90%;
+    padding: 30px;
+    background: #4a4e69;
+    margin: auto;
+    margin: 50px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+
+.form-style-8 h2 {
+    background: #e5e5e5;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 900;
+    padding: 20px;
+    text-align: center;
+    margin: -30px -30px 30px -30px;
+}
+
+.form-style-8 input[type="text"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+.form-style-8 select {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+
+.form-style-8 textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+.form-style-8 input[type="button"],
+.form-style-8 input[type="submit"] {
+    -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    background-color: #9f86c0;
+    border: 1px solid #468282;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+    padding: 8px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.form-style-8 input[type="button"]:hover,
+.form-style-8 input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #5e548e 5%, #d8e2dc 100%);
+    background-color: #d8e2dc;
+}
+
+.rainbow {
+    
+    animation: colorchange 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+
+
+@keyframes colorchange {
+    0% {
+        color: #ff0000;
+    }
+
+    14% {
+        color: #5f471a;
+    }
+
+    28% {
+        color: #154516;
+    }
+
+    42% {
+        color: #008000;
+    }
+
+    56% {
+        color: #0f0f3a;
+    }
+
+    70% {
+        color: #4b0082;
+    }
+
+    84% {
+        color: #733173;
+    }
+
+    100% {
+        color: #ff0000;
+    }
+}
