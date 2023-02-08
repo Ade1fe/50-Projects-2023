@@ -4,7 +4,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" content="user-scalable=no">
     <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="client.css">
+    
+     <title>Document</title>
 </head>
 <body>
     <div class="form-style-8">
@@ -14,9 +17,117 @@
     <input type="email" name="field2" placeholder="Email" id="email" required />
     <input type="password" name="field3" placeholder="Password" id="password" required/>
     <!-- <textarea placeholder="Message" onkeyup="adjust_textarea(this)" id="text"></textarea> -->
-    <input type="button"  value="Send Message" id="btns"/>
+    <input type="button"  value="Sign in" id="btns"/>
   </form>
 </div>
+
+
+  
+    <div id="newCon">
+
+
+
+<section>
+        <div class="container">
+        <div class="wrapper">
+            <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZG9nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60">
+            <img src="https://media.istockphoto.com/id/1304787242/photo/ragdoll-cat-sitting-on-a-window.jpg?b=1&s=170667a&w=0&k=20&c=JWsD8FhSafETk4tbuUlqcmCnsTPUApu-FLNmA6AV-jY=">
+            <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Z3VpbmVhJTIwcGlnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60">
+            <img src="https://media.istockphoto.com/id/1311272463/photo/wild-rabbit.jpg?b=1&s=170667a&w=0&k=20&c=M1byVf6deL-g7Ma7U5P8rYoX6LvvsUVyVRFEKxxBzaQ=">
+            <img src="https://images.unsplash.com/photo-1596577877537-d9ca17c4090c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHNuYWtlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60">
+        </div>
+    </div>
+
+    <div class="purple">
+        <h2>Yay, Pets! Ensure your pet(s) gets the best care</h2>
+
+        <form action="" method="get">
+            <div class="float">
+                <div class="in">
+                <label class="label" for="name">Name</label>
+            <input type="text" for="name">
+            </div>
+           <div class="in2">
+            <label class="label" for="">Photo:</label>
+             <input type="file" accept="image/*" onchange="loadFile(event)">
+      <p><img id="output" width="200"/></p>
+      <script>
+          var loadFile = function(event) {
+              var image = document.getElementById('output');
+              image.src=URL.createObjectURL(event.target.files[0]);
+          };
+      </script>
+           </div>
+             <!-- <br> -->
+           <div class="in">
+            <label class="label" for="Breed">Breed</label>
+           <input type="text">
+           </div>
+
+           <div class="inp">
+            <label class="label" for="">Birthday</label>
+           <input type="date">
+           </div>
+            </div>
+
+           <br>
+
+           <div class="flexM">
+            <div class="dis">
+    <label id="gen" for="Gender">Gender</label>
+<input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
+<label for="toggle-on" class="btn">Female</label>
+<input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio">
+<label for="toggle-off" class="btn">Male</label>
+</div>
+
+
+
+           
+<div class="dis">
+    <label for="Gender">Spayed or Neutered</label>
+<input id="toggle-on1" class="toggle toggle-left" name="toggle1" value="false" type="radio" checked>
+<label for="toggle-on1" class="btn">Spayed</label>
+<input id="toggle-off1" class="toggle toggle-right" name="toggle1" value="true" type="radio">
+<label for="toggle-off1" class="btn">Neutered</label>
+</div>
+           </div>
+
+
+<div class="center">
+  <div class='radio-group'>
+    <label class='radio-label'>
+        <input name='pets' type='radio' id='0 - 25' checked='checked'>
+        <span class='inner-label'>0 - 25 Ibs</span>
+    </label>
+    <label class='radio-label'>
+        <input name='pets' type='radio' id='25 - 50'>
+        <span class='inner-label'>25 - 50 Ibs</span>
+    </label>
+    <label class='radio-label'>
+        <input name='pets' type='radio' id='50 - 100'>
+        <span class='inner-label'>50 - 100 Ibs</span>
+    </label>
+    <label class='radio-label'>
+        <input name='pets' type='radio' id='100+'>
+        <span class='inner-label'>100 + Ibs</span>
+    </label>
+</div>
+</div>
+
+
+
+        </form>
+    </div>
+
+    </section>
+
+
+
+
+    </div>   <!-- newCon  -->
+    
+
 
 
     <script src="index.js"></script>

@@ -31,7 +31,7 @@ document.getElementById("btns").addEventListener("click", () => {
         // window.open(url, "_self");
         // console.log("worked")
        
-        alert("Logged On")
+        // alert("Logged On")
          $("#newCon").show();
         $(".form-style-8").hide();
         
