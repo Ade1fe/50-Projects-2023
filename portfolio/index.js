@@ -9,9 +9,7 @@ jQuery(document).ready(function() {
         (function(){
       var words = [
           'capable',
-          'competent',
-          'dynamic',
-          'proficient'
+          'dynamic'
           ], i = 0;
       setInterval(function(){
           $('#changingword').fadeOut(function(){
