@@ -94,35 +94,16 @@ window.addEventListener("scroll", () => {
 });
 
 
-// jslider
-var RangeSlider = (function() {
-	var elRangeInputs = document.querySelectorAll(".range");
-
-	function setProgress(elTarget) {
-		var elRangeBar = elTarget.parentElement;
-		var intThumbWidth = elRangeBar.clientHeight * 3;
-		var intRangeBarWidth = elRangeBar.clientWidth - intThumbWidth;
-		var intThumbWidthOffset = intThumbWidth / 2;
-		
-		var intProgressPosition = (elTarget.value - elTarget.min) / (elTarget.max - elTarget.min);
-		var intRangePosition = (intRangeBarWidth * intProgressPosition) + intThumbWidthOffset;
-		
-
-		elRangeBar.style.background =
-			"linear-gradient(to right, #deaaff " +
-			intRangePosition + "px, #fff " +
-			intRangePosition + "px";
-	}
-
-	for (var i = 0; i < elRangeInputs.length; i++) {
-		elRangeInputs[i].firstElementChild.addEventListener("input", function() {
-			setProgress(this);
-		});
-
-		setProgress(elRangeInputs[i].firstElementChild);
-	}
-})();
 
 
+// move to top
+  $(window).on('scroll load', function(){
+    
 
-// carousel
+         if($(window).scrollTop() > 0){
+            $('.rocket').show();
+         }else{
+             $('.rocket').hide();
+         }
+
+    })

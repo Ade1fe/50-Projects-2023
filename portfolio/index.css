@@ -14,7 +14,7 @@
         outline: none;
         border: none;
         text-transform: capitalize;
-        /* transition: all .3s linear; */
+        transition: all .3s linear;
 }
 
 html {
@@ -288,61 +288,33 @@ strong{
     width: 48%;
     
 }
-
-.skills .skills-content .right .bars {
-    margin-bottom: 15px;
-}
-
-.skills .skills-content .right .info {
+ .right{
     display: flex;
-    margin-bottom: 5px;
-    align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
-.skills .skills-content .right .info span{
-    color: #fff;
-}
-
-.skills .skills-content .right span {
-    font-weight: 500;
-    font-size: 18px;
+.right h3{
+    border-left: var(--purple) 2px solid;
+    padding: 1rem 2rem;
+    background-color: #222;
+   
 }
 
-.skills .skills-content .right .line {
-    height: 5px;
-    width: 100%;
-    background: lightgrey;
-    position: relative;
-}
-
-.skills .skills-content .right .line::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: var(--purple);
-}
-
-.skills-content .right .html::before {
-    width: 90%;
-}
-
-.skills-content .right .css::before {
-    width: 60%;
-}
-
-.skills-content .right .js::before {
+.expre {
     width: 80%;
+    background-color: #222;
+    padding: 1rem 1.5rem;
+    margin: auto;
+    margin-top: 2rem;
+}
+.expre h3{
+    text-align: left;
+}
+.expre h4, .expre h5 , .expre p {
+    color: #999;
 }
 
-.skills-content .right .php::before {
-    width: 50%;
-}
-
-.skills-content .right .mysql::before {
-    width: 50%;
-}
 
 
 /* work */
@@ -368,12 +340,12 @@ strong{
     text-align: center;
 }
 .work-box{
-    border: var(--purple) 0.01rem solid;
+    border: var(--purple) 0.08rem dashed;
    width: 400px;
     border-radius: 20px;
     justify-content: center;
     padding: 1rem;
-    background: #222;
+    background: #111;
 }
 .text a{
     color: #fff;
@@ -441,6 +413,19 @@ footer .links{
     margin: 1rem 0rem;
 }
 
+
+/* rocket */
+  .rocket {
+      position: fixed;
+      bottom: 3.5rem;
+      right: 2rem;
+      z-index: 999;
+      display: none;
+  }
+
+  .rocket span{
+    font-size: 30px;
+  }
 
 
 
