@@ -107,3 +107,27 @@ window.addEventListener("scroll", () => {
          }
 
     })
+
+
+
+    
+
+    // ---------------
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+let darkThree = document.querySelector('#theme-button');
+
+darkThree.onclick = () => {
+  console.log("ADEIFE OOOOOOOOOOOOOO")
+  if (darkThree.classList.contains('ri-sun-line')) {
+    darkThree.classList.replace('ri-sun-line', 'ri-moon-line');
+    document.body.classList.add('active');
+  }
+  else {
+    darkThree.classList.replace('ri-moon-line', 'ri-sun-line');
+    document.body.classList.remove('active');
+  }
+}
