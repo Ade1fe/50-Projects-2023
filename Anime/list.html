@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrollable Navbar</title>
+    <style>
+      #navy.sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+      }
+      .fst {
+        height: 1000px; /* just for demonstration */
+        border: 20px solid red;
+      }
+      .dami{
+        border: 2px solid red;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <ul class="dami">
+          
+        </ul>
+      </nav>
+    <header id="navy">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="fst"></div>
+
+    <script>
+      // get the #navy element
+      const nav = document.querySelector('#navy');
+      // get the offset position of .fst element
+      const fst = document.querySelector('.fst');
+      const fstOffset = fst.offsetTop;
+
+      // listen for scroll events on the window
+      window.addEventListener('scroll', function () {
+        // get the current scroll position
+        const scrollPos = window.scrollY;
+
+        if (scrollPos >= fstOffset) {
+          // if the scroll position is below .fst, make #navy sticky
+          nav.classList.add('sticky');
+        } else {
+          // otherwise, remove the sticky class
+          nav.classList.remove('sticky');
+        }
+      });
+
+      // keep track of the previous scroll position
+      let prevScrollPos = window.pageYOffset;
+
+      window.addEventListener('scroll', function () {
+        // get the current scroll position
+        const currentScrollPos = window.pageYOffset;
+
+        if (prevScrollPos > currentScrollPos) {
+          // if scrolling up, make #navy stick until it encounters .fst
+          if (currentScrollPos < fstOffset) {
+            nav.classList.remove('sticky');
+          }
+        } else {
+          // if scrolling down, make #navy sticky to the top of the window
+          nav.classList.add('sticky');
+        }
+
+        // save the current scroll position for the next iteration
+        prevScrollPos = currentScrollPos;
+      });
+    </script>
+  </body>
+</html>

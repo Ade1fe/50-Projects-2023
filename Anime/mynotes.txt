@@ -1,0 +1,48 @@
+icons for hours and qualities and rating
+probably numbers of episodes
+
+
+each section will be centered and border-left 4px solid red
+
+also have comments section on view details
+
+
+
+
+ <script>
+    fetch('https://api.jikan.moe/v4/top/anime')
+    .then((res) => res.json())
+    .then((response) => console.log(response));
+</script>
+
+
+
+
+// Select the element you want to add the class to
+const myElement = document.querySelector("#navy");
+const myElement2 = document.querySelector(".fst");
+
+// Add the "navy" class to the element when the page loads
+myElement.classList.add("navy");
+
+// Set a variable to keep track of the previous scroll position
+let previousScrollPosition = window.pageYOffset;
+
+// Add an event listener to the window object for the "scroll" event
+window.addEventListener("scroll", () => {
+  // Get the current scroll position
+  const currentScrollPosition = window.pageYOffset;
+
+  // Check if the user has scrolled up
+  if (currentScrollPosition < previousScrollPosition) {
+    // Add the class to the element
+    myElement.classList.add("navy");
+  } else {
+    // Remove the class from the element
+    myElement.classList.remove("navy");
+    // myElement2.style.display = 'none';
+  }
+
+  // Update the previous scroll position
+  previousScrollPosition = currentScrollPosition;
+});
