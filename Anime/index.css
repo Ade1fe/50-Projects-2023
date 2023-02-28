@@ -96,23 +96,38 @@ main {
     border: 2px solid red;
 
 } 
-
 .carl {
+    z-index: 999;
     top: 80%;
     right: 7%;
     position: absolute;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    padding-top: 1rem;
-    background-color: var(--red);
-    z-index: 999;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    padding: 14px 80px 18px 36px;
+    cursor: pointer;
 }
 
-/* On mouse-over, add a deeper shadow */
 .carl:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
+
+.carl img {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    max-height: 120px;
+}
+
+.carl {
+    background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
 
 /* Add some padding inside the card container */
 .containerOne {
@@ -362,6 +377,114 @@ main {
 }
 
 
+/* -------welcome section--------- */
+.sub-title {
+    font-size: 60px;
+    /* margin: 5px 0; */
+    font-weight: 600;
+    color: var(--white);
+}
+
+.tab-titles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   gap:20px;
+   margin-bottom: 2rem;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: var(--red);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: var(--cyan);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+.myContain {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    align-items: center;
+    gap: 30px 20px;
+}
+
+#notify, #nSeason, #recently{
+    margin: 3rem auto;
+  
+}
+#welcome {
+    padding: 2rem 0rem;
+    /* border: #000 2px solid; */
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* new season */
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    align-items: flex-end;
+    justify-content: center;
+    /* filter: invert(100%); */
+}
+.myseason .carousel-control-next{
+    right: 13rem;
+}
+.myseason .carousel-control-prev {
+    left: 13rem;
+}
+.myseason .carousel-item{
+    margin-bottom: 3rem;
+}
+.myseason .carousel-control-next-icon, 
+.myseason .carousel-control-prev-icon{
+    padding: 1.4rem;
+    background-color: #03045e;
+    border-radius: 5px;
+}
+.last{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px ;
+}
 
 
 
@@ -370,17 +493,96 @@ main {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:700px) {
+    .myContain {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+ .last .card:nth-child(3) {
+   display: none;
+}
+.tab-titles {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px 10px;
+}
+.myseason .carousel-control-next {
+    right: 7rem;
+}
+
+.myseason .carousel-control-prev {
+    left: 7rem;
+}
+.myseason .carousel-control-next-icon,
+.myseason .carousel-control-prev-icon {
+    padding: 1.2rem;
+    background-color: #03045e;
+    border-radius: 5px;
+}
+}
 
 
 
 @media (max-width:630px) {
     .centered-div {
     position: absolute;
-    top: 35%;
+    top: 39%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: left;
 }
+}
+
+@media (max-width:550px) {
+    .myContain {
+       display: grid;
+       grid-template-columns: repeat(2, auto);
+   }
+ .last .card:last-child {
+     display: none;
+ }
 }
 
 
@@ -409,6 +611,15 @@ main {
 }
 .marq{
     padding:0rem 0.7rem;
+    width: 100%;
+}
+   
+
+.myseason .carousel-control-next-icon,
+.myseason .carousel-control-prev-icon {
+    padding: 1rem;
+    background-color: #03045e;
+    border-radius: 5px;
 }
 
 
@@ -426,4 +637,18 @@ main {
      font-size: 15px !important;
      font-weight: bolder;
  }
+ .myContain {
+     display: grid;
+     grid-template-columns: repeat(1, auto);
+ }
+ .myseason .carousel-control-next {
+     right: 5rem;
+ }
+
+ .myseason .carousel-control-prev {
+     left: 5rem;
+ }
+  .last .card:nth-child(2) {
+      display: none;
+  }
 }
