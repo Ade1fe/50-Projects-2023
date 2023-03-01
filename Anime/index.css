@@ -480,8 +480,8 @@ main {
     transform: scale(1.1);
 }
 
-#notify, #nSeason, #recently, #join{
-    margin: 3rem auto;
+#notify, #nSeason, #recently, #join, #blog, #grab, #email, #footer{
+    margin: 4rem auto;
   
 }
 #welcome {
@@ -533,7 +533,9 @@ main {
 /* join */
 
 #join{
-
+    background-image: url(./images/photo_6048603426960555303_y.jpg);
+    height: 13rem;
+    padding: 10rem;
     filter: brightness(0.6);
     background-size: cover;
     background-position: center;
@@ -554,20 +556,67 @@ main {
 
 
 
+/* grab a deal */
+.opp{
+    background-color: #ff726f !important;
+}
+.opp:hover{
+    background-color: #fff !important;
+    color: #9a031e;
+    border: red 2px solid;
+}
+.mydeal{
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    gap: 20px 30px;
+    justify-content: center;
+    align-items: center;
+}
 
+.card{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
 
+.mydeal .card{
+    transition: all .2s ease-in-out
+}
+.mydeal .card:hover{
+    transform: scale(1.1);
+}
+.rows{
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    gap: 20px;
+    /* border: 2px solid red; */
+}
 
+/* footer */
+hr{
+    width: 90%;
+    margin:3rem auto;
+    margin-bottom: 4rem;
+    
+}
+.row ul {
+    list-style: none;
+}
+.row ul li a{
+    text-decoration: none !important;
+}
+.row ul li::before {
+    content: "\2022";
+    color: red;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
 
+.row ul li:hover{
 
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -592,6 +641,11 @@ main {
     .bloggy {
     grid-template-columns: repeat(2, auto);
     
+}
+
+#join{
+    height: 12rem;
+        padding: 5rem;
 }
 }
 
@@ -625,7 +679,10 @@ main {
     background-color: #03045e;
     border-radius: 5px;
 }
-
+#join{
+    height: 7rem;
+        padding: 5rem;
+}
 }
 
 
@@ -641,7 +698,16 @@ main {
 .bloggy {
     grid-template-columns: repeat(1, auto);
 }
-
+.rows {
+    display: grid;
+    justify-content: center !important;
+    align-items: center;
+    gap: 20px;
+    /* border: 2px solid red; */
+}
+.col-5{
+    width: 300px;
+}
 }
 
 @media (max-width:550px) {
@@ -718,5 +784,8 @@ main {
  }
   .last .card:nth-child(2) {
       display: none;
+  }
+  .col-5 {
+      width: 200px;
   }
 }
