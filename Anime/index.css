@@ -60,13 +60,6 @@ ul.nav li a {
     color: #fff;
 }
 
-main {
-    height: 100%;
-    width: 100%;
-    border: 2px solid red;
-}
-
-
 /* notification */
 .fa-stack[data-count]:after {
     position: absolute;
@@ -140,7 +133,7 @@ main {
 
 /* icons */
 .fst {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -312,7 +305,7 @@ main {
 .myConny{
     display: flex;
     width: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     justify-content: left;
     align-items: center;
     gap: 0 3rem;
@@ -323,7 +316,7 @@ main {
 .centered-div {
     width: 100% !important;
     padding: 0rem 0.5rem;
-    border: 2px #3a86ff solid;
+    /* border: 2px #3a86ff solid; */
     position: absolute;
     top: 60%;
     left: 50%;
@@ -372,8 +365,6 @@ main {
     padding: 1rem 0.5rem;
     -webkit-clip-path:polygon(8.3% 0.5%, 91.5% 0.5%, 99.8% 23.8%, 99.8% 100%, 0% 99.8%, 0.1% 26.8%);
     clip-path: polygon(8.3% 0.5%, 91.5% 0.5%, 99.8% 23.8%, 99.8% 100%, 0% 99.8%, 0.1% 26.8%);
-        
-    /* border-bottom-right-radius: 20px; */
 }
 
 
@@ -458,9 +449,7 @@ main {
 }
 
 .hover:hover {
-    /* background-color: rgba(0, 188, 212, 0.8); */
     opacity: 1;
-    /* // You can tweak with other background properties too (ie: background-image)... */
 }
 
 .hover img {
@@ -480,22 +469,20 @@ main {
     transform: scale(1.1);
 }
 
-#notify, #nSeason, #recently, #join, #blog, #grab, #email, #footer{
+#notify, #nSeason, #recently, #join, #blog, #grab, #email{
     margin: 4rem auto;
   
 }
 #welcome {
     padding: 2rem 0rem;
-    /* border: #000 2px solid; */
     margin-bottom: 1rem;
 }
 
 
 
-
 /* new season */
-.carousel-control-next,
-.carousel-control-prev /*, .carousel-indicators */ {
+.myseason .carousel-control-next,
+.myseason .carousel-control-prev {
     align-items: flex-end;
     justify-content: center;
     /* filter: invert(100%); */
@@ -536,7 +523,7 @@ main {
     background-image: url(./images/photo_6048603426960555303_y.jpg);
     height: 13rem;
     padding: 10rem;
-    filter: brightness(0.6);
+    /* filter: brightness(0.9); */
     background-size: cover;
     background-position: center;
     object-fit: cover;
@@ -546,7 +533,7 @@ main {
 /* blog */
 .bloggy{
     display: grid;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     grid-template-columns: repeat(3, auto);
     justify-content: center;
     align-items: center;
@@ -584,14 +571,13 @@ main {
 .mydeal .card:hover{
     transform: scale(1.1);
 }
-.rows{
+.rowss{
     display: flex;
     justify-content: center !important;
-    align-items: center;
+    align-items: start;
     gap: 20px;
-    /* border: 2px solid red; */
 }
-
+.
 /* footer */
 hr{
     width: 90%;
@@ -599,13 +585,14 @@ hr{
     margin-bottom: 4rem;
     
 }
-.row ul {
+.rows ul {
     list-style: none;
 }
-.row ul li a{
+.rows ul li a{
     text-decoration: none !important;
+    color: #000;
 }
-.row ul li::before {
+.rows ul li::before {
     content: "\2022";
     color: red;
     font-weight: bold;
@@ -614,10 +601,23 @@ hr{
     margin-left: -1em;
 }
 
-.row ul li:hover{
-
+.rows ul li a:hover{
+color: #9c9087;
 }
 
+#footer{
+    padding: 4rem 1rem;
+    background-color: #f1f1f1f1;
+}
+.mylil{
+    display: flex;
+    justify-content: center;
+    gap: 20px 30px;
+    align-items: center;
+    background-color: #f9f9f9f9;
+    padding: 2rem 1rem;
+    padding-bottom: 1rem;
+}
 
 
 
@@ -647,6 +647,21 @@ hr{
     height: 12rem;
         padding: 5rem;
 }
+.rows {
+    display: grid;
+    justify-content: center !important;
+    align-items: center;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+   
+}
+.col-4 , col{
+    width: 100%;
+}
+.col-5{
+    width: 100%;
+}
+
 }
 
 
@@ -718,6 +733,11 @@ hr{
  .last .card:last-child {
      display: none;
  }
+ .mylil {
+     display: grid;
+     justify-content: center;
+     text-align: center;
+ }
 }
 
 
@@ -755,6 +775,19 @@ hr{
     padding: 1rem;
     background-color: #03045e;
     border-radius: 5px;
+}
+
+.rows {
+    display: grid;
+    justify-content: center !important;
+    grid-template-columns: repeat(1, auto);
+    gap: 20px;
+    text-align: center;
+}
+
+.col-4,
+col {
+    width: 100%;
 }
 
 }
