@@ -444,7 +444,43 @@ main {
     gap: 30px 20px;
 }
 
-#notify, #nSeason, #recently{
+.hover {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 188, 212, 0);
+    transition: background-color 0.5s;
+    opacity: 0;
+
+
+}
+
+.hover:hover {
+    /* background-color: rgba(0, 188, 212, 0.8); */
+    opacity: 1;
+    /* // You can tweak with other background properties too (ie: background-image)... */
+}
+
+.hover img {
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    margin: auto !important;
+}
+
+.myContain .card {
+    transition: all .2s ease-in-out;
+}
+
+.myContain .card:hover {
+    transform: scale(1.1);
+}
+
+#notify, #nSeason, #recently, #join{
     margin: 3rem auto;
   
 }
@@ -471,6 +507,7 @@ main {
     left: 13rem;
 }
 .myseason .carousel-item{
+    padding-bottom: 1rem;
     margin-bottom: 3rem;
 }
 .myseason .carousel-control-next-icon, 
@@ -485,6 +522,34 @@ main {
     align-items: center;
     gap: 20px ;
 }
+.last .card {
+    transition: all .2s ease-in-out;
+}
+
+.last .card:hover {
+    transform: scale(1.1);
+}
+
+/* join */
+
+#join{
+
+    filter: brightness(0.6);
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}
+
+
+/* blog */
+.bloggy{
+    display: grid;
+    border: 2px solid red;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
 
 
 
@@ -523,13 +588,12 @@ main {
 
 
 
-
-
-
-
-
-
-
+@media (max-width:800px) {
+    .bloggy {
+    grid-template-columns: repeat(2, auto);
+    
+}
+}
 
 
 
@@ -561,6 +625,7 @@ main {
     background-color: #03045e;
     border-radius: 5px;
 }
+
 }
 
 
@@ -573,6 +638,10 @@ main {
     transform: translate(-50%, -50%);
     text-align: left;
 }
+.bloggy {
+    grid-template-columns: repeat(1, auto);
+}
+
 }
 
 @media (max-width:550px) {
@@ -621,7 +690,6 @@ main {
     background-color: #03045e;
     border-radius: 5px;
 }
-
 
 }
 
