@@ -1,0 +1,239 @@
+.navbar-nav li a:hover{
+    color: #f11f !important;
+    font-weight: bolder;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    border: 2px solid red;
+}
+.imgContainer{
+border: 2px solid blue;
+width: 100%;
+height: 100%;
+margin-bottom: 2rem;
+}
+.imgContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* section3 */
+#section3 h1 , p{
+    width: 70%;
+    margin: auto;
+    padding: 0.5rem 0rem;
+}
+.col{
+    border-left: 2px solid #f1f1f2;
+    margin: 2rem 0rem;
+}
+ .col img{
+    width: 20%;
+    margin-bottom: 1rem;
+
+}
+ .rows {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     /* border: 2px solid red !important; */
+
+ }
+
+#section4{
+    margin: 2rem 0rem;
+    background-image: url('https://img.freepik.com/free-vector/background-with-night-city-neon-lights_1441-2822.jpg?size=626&ext=jpg&ga=GA1.2.1207481026.1670858809&semt=sph');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.newsletter{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 50%;
+    height: 320px;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+}
+
+/* section5 */
+#section5{
+    margin: 4rem 0rem;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 50% ;
+}
+.card{
+    padding: 0.5rem;
+    width: 18rem;
+    position: relative;
+}
+.card-container{
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+.card:hover{
+    transition: transform 0.3s ease-out;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.hover {
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0.5rem;
+   margin-top: 0.4rem;
+transition: transform 0.3s ease-out;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.hover a:hover {
+    transform: translateY(-10px);
+}
+
+.hover a i{
+    font-size: 20px;
+   
+}
+
+
+/* section6 */
+#section6 {
+    margin: 2rem 0rem;
+    background-image: url('./images/up.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.co{
+    margin: auto;
+    background-color: #000;
+    padding: 1rem;
+    width: 100%;
+}
+.co button:hover{
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid red;
+}
+
+
+/* section7 */
+#section7{
+    margin: 2rem 0rem;
+    padding: 2rem 0rem;
+}
+.box h2{
+    text-align: center;
+    border: 2px solid blue;
+    /* padding: 1.5rem 1rem; */
+}
+.box p{
+    font-size: 17px;
+    text-align: left;
+}
+.box {
+    border: 2px solid red;
+  
+}
+.contain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.imgcon{
+    max-width: 100px;
+    height: 100px;
+    border: 2px solid red;
+    border-radius: 50%;
+    padding: 3px;
+}
+.imgcon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px red dashed;
+}
+.tex{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 2rem;
+    gap: 10px;
+}
+.in h4{
+    font-size: 17px;
+    margin-left: 1rem;
+    margin-bottom: 0rem;
+}
+.in p{
+    font-size: 13px;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:670px) {
+    .rows{
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        /* border: 2px solid red !important; */
+       
+    }
+    .col{
+        border: none;
+        margin: 1rem 0rem;
+        border-bottom: 2px solid #f1f1f2;
+        gap: 0;
+    }
+    .newsletter{
+        width: 100%;
+        /* top: 2%; */
+        left: 0%;
+    }
+}
+
+@media (max-width:500px) {
+    .contain{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: 20px 0rem;
+    }
+}

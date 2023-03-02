@@ -60,6 +60,7 @@ ul.nav li a {
     color: #fff;
 }
 
+
 /* notification */
 .fa-stack[data-count]:after {
     position: absolute;
@@ -540,6 +541,10 @@ ul.nav li a {
     gap: 25px;
 }
 
+.bloggy .card{
+    max-width: 350px;
+}
+
 
 
 
@@ -563,6 +568,7 @@ ul.nav li a {
 
 .card{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    max-width: 250px;
 }
 
 .mydeal .card{
@@ -571,19 +577,21 @@ ul.nav li a {
 .mydeal .card:hover{
     transform: scale(1.1);
 }
-.rowss{
-    display: flex;
-    justify-content: center !important;
-    align-items: start;
-    gap: 20px;
+
+.mydeal .card{
+    width: 18rem;
 }
-.
+
+
 /* footer */
 hr{
     width: 90%;
     margin:3rem auto;
     margin-bottom: 4rem;
     
+}
+.rows{
+    display: flex;
 }
 .rows ul {
     list-style: none;

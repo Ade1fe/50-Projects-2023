@@ -46,3 +46,13 @@ window.addEventListener("scroll", () => {
   // Update the previous scroll position
   previousScrollPosition = currentScrollPosition;
 });
+
+
+
+
+.rowss{
+    display: flex;
+    justify-content: center !important;
+    align-items: start;
+    gap: 20px;
+}
