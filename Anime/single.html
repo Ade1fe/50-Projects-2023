@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="single__style.css" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+		  <!-- <link rel="stylesheet" href="about.css" /> -->
+   		 <link rel="stylesheet" href="./styles.css" />
+		<title>single</title>
+	</head>
+	<body>
+
+		<main>
+			<a href="./index.html" id="link">Home</a>
+			<h1 id="title"></h1>
+			<div class="container">
+				<div id="image"></div>
+				<div class="holder">
+					<p id="description"></p>
+					<div id="genres"></div>
+				</div>
+			</div>
+		</main>
+
+		<!-- End of HMTL -->
+
+		<!-- ###################### -->
+
+		<!-- Javascript Codes -->
+		<script>
+			// Get the query parameters from the URL
+			const queryParams = new URLSearchParams(window.location.search);
+
+			// Get the value of the "id" query parameter
+			const animeId = queryParams.get('id');
+			// function declaration for getting a single anime
+
+			const getSingleAnime = async () => {
+				// this takes in the id, that is the function will run whenever you get to this page.
+				try {
+					const res = await fetch(
+						`https://api.jikan.moe/v4/anime/${animeId}/full`
+					);
+					//Destructure the data from the API response
+					const { data } = await res.json();
+					const title = document.getElementById('title');
+					title.innerText = data.title;
+					title.style.transform = 'capitalize';
+					console.log(data);
+					//genres
+					data.genres.forEach((genre) => {
+						const genresContainer =
+							document.getElementById('genres');
+						const genreHolder = document.createElement('ul');
+						genreHolder.innerHTML = `<ul class='listitems'><li>${genre.name}</li></ul>`;
+						genresContainer.appendChild(genreHolder);
+					});
+					// description
+					const descriptionHolder =
+						document.getElementById('description');
+					descriptionHolder.innerHTML = `
+						<p class="description">
+							${data.synopsis}
+							<span>${data.rating}</span>
+						</p>`;
+					// image
+					const imageContainer = document.getElementById('image');
+					const image = document.createElement('img');
+					image.src = data.images.webp.large_image_url;
+					imageContainer.appendChild(image);
+				} catch (error) {
+					console.log(error);
+				}
+			};
+
+			getSingleAnime();
+		</script>
+
+		<div class="container__flex mylil text-center">
+			<p>© 2023 Deife | Online Movie Streaming</p>
+			<p>Site create by O'Damisi</p>
+		</div>
+
+		<!-- Javascript Codes -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	</body>
+</html>

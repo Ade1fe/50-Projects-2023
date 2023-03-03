@@ -56,3 +56,83 @@ window.addEventListener("scroll", () => {
     align-items: start;
     gap: 20px;
 }
+
+
+
+
+//add the carl
+/* notification-Bar */
+.miniBarContent{
+    border: 2px solid red;
+
+} 
+.carl {
+    z-index: 999;
+    top: 80%;
+    right: 7%;
+    position: absolute;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    padding: 14px 80px 18px 36px;
+    cursor: pointer;
+}
+
+.carl:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+.carl img {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    max-height: 120px;
+}
+
+.carl {
+    background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.sec span {
+	position: relative;
+}
+#note {
+	margin-right: 5rem;
+	cursor: pointer;
+}
+
+
+const searchFunction = () => {
+  const input = document.querySelector('input[type="search"]');
+  const resultContainer = document.querySelector('.search__result');
+  const form = document.getElementById("form");
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const inputValue = input.value;
+    if (inputValue.length >= 3) {
+      try {
+        let res = await fetch(`https://api.jikan.moe/v4/anime?q=${inputValue}&limit=5`);
+        res = await res.json();
+        resultContainer.innerHTML = '';
+        res.data.slice(0, 5).forEach((data) => {
+          const searchCard = `
+            <div class="search__item">
+              <div class="search__item-img">
+                <img src=${data.images.webp.large_image_url} alt=${data.title}/>
+              </div>
+              <a href="./single.html?id=${data.mal_id}" class="search__item-title">
+                ${data.title}
+              </a>
+            </div>
+          `;
+          resultContainer.innerHTML += searchCard; 
+        });
+      } catch (error) {}
+    }
+  });
+};

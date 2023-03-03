@@ -3,65 +3,84 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
-      integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="index.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.js"
-      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+			integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+			crossorigin="anonymous"
+		/>
+		<!-- Local style -->
+		<link rel="stylesheet" href="./styles.css" />
+		<!-- <link rel="stylesheet" href="index.css"> -->
+		<!-- Local style Ends -->
+		<script
+			src="https://code.jquery.com/jquery-3.6.3.js"
+			integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+			crossorigin="anonymous"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+			integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
     <title>myCode</title>
   </head>
   <body>
+
+
     <!--  -->
 
-    <div class="container-fluid fst">
-      <ul class="icons">
-        <li class="nav-item">
-          <a class="nav-link active" href="#"><i class="bi bi-facebook"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#"><i class="bi bi-twitter"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#"><i class="bi bi-reddit"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#"
-            ><i class="bi bi-instagram"></i
-          ></a>
-        </li>
-      </ul>
-      <form class="d-flex pt-3" role="search">
-        <input
-          class="form-control me-2"
+
+	<div class="main_container first_header fst">
+			<ul class="icons">
+				<li class="nav-item">
+					<a class="nav-link active" href="#"
+						><i class="bi bi-facebook"></i
+					></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="#"
+						><i class="bi bi-twitter"></i
+					></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="#"
+						><i class="bi bi-reddit"></i
+					></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="#"
+						><i class="bi bi-instagram"></i
+					></a>
+				</li>
+			</ul>
+			<div class="form__search">
+				<form role="search" id="form" class="form">
+					<input
+						
+
+						 class="form-control me-2"
+		  id="searchh"
           type="search"
           placeholder="Search"
           aria-label="Search"
-        />
-        <button class="btn btn-outline-success btn" type="button">
-          Search
-        </button>
-      </form>
-    </div>
+					/>
+					<!-- <button class="btn btn-outline-success btn" type="submit">
+						Search
+					</button> -->
+				</form>
+				<div class="search__result">
+				</div>
+			</div>
+		</div>
 
     <!-- fixed header -->
 
@@ -164,463 +183,329 @@
     </div>
 
     <!-- main-carousel -->
-    <div
-      id="carouselExampleCaptions"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            src="https://w0.peakpx.com/wallpaper/584/319/HD-wallpaper-muzan-kibutsuji-in-demon-slayer.jpg"
-            class="d-block w-100"
-            alt="..."/>
-          <div class="carousel-caption centered-div">
-            <h3 class="mb-2">Lorem ipsum dolor sit amet.</h3>
-            <h3 class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
-             <h3 class="mb-2">Lorem ipsum dolor sit amet consectetur.</h3>
-            <div class="myConny">
-              <a href="#"><button>watch now</button></a>
-             <a href="#"><button>more details</button></a>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img
-            src="https://w0.peakpx.com/wallpaper/584/319/HD-wallpaper-muzan-kibutsuji-in-demon-slayer.jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="carousel-caption centered-div">
-            <h3 class="mb-2">Trending</h3>
-            <h3 class="mb-2">Status</h3>
-             <h3 class="mb-2">Title</h3>
-            <div class="myConny">
-              <a href="#"><button>watch now</button></a>
-             <a href="#"><button>more details</button></a>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img
-            src="https://w0.peakpx.com/wallpaper/584/319/HD-wallpaper-muzan-kibutsuji-in-demon-slayer.jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="carousel-caption centered-div">
-            <h3 class="mb-2">Trending</h3>
-            <h3 class="mb-2">Status</h3>
-             <h3 class="mb-2 ">Title</h3>
-            <div class="myConny">
-              <a href="#"><button>watch now</button></a>
-             <a href="#"><button>more details</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
-     <!-- button for next and prev -->
-    </div>
-
-
-
-
-
-    <!-- advert section -->
-    <section class="container-fluid marq" id="notify">
-        <h2>Trending</h2>
-        <marquee class="css2" direction="left">
-        <p> <span>Public Announcement!!!</span> You can dm for adverts and promotion. New release will be updated on sunday.Please note this project was written and designed by me</p>
-        </marquee>
-    </section>
-
-
-
-<!-- section3 -->
-<!-- welcome section -->
-<section class="container-fluid mt-5" id="welcome">
-    <pre class="text-center fs-4">WELCOME TO OUR SITE</pre>
-  <h2 class="text-capitalize text-center mb-3">WATCH ANIME ONLINE IN HIGH QUALITY</h2>
-      <div class="tab-titles container">
-                        <p class="tab-links active-link" onclick="opentab('skills')">RECENTLY UPDATED</p>
-                        <p class="tab-links" onclick="opentab('languages')">TRENDING</p>
-                        <p class="tab-links" onclick="opentab('experience')">MOST VIEWED</p>
-                        <p class="tab-links" onclick="opentab('education')">TOP RATED</p>
-                    </div>
-         <div class="container-fluid">
-          
-                    <div class="tab-contents active-tab" id="skills">
-                       <div class="myContain">
-                        <template data-user-template>
-                           <div class="card" style="max-width: 250px;">
-        <img src="" class="card-img-top" alt="...">
-       <div class="hover">
-        <a href=""><img src="" alt=""></a>
-       </div>
-        <div class="card-body">
-       <h5 class="card-title"></h5>
-           <p class="card-text">
-       <i class="bi bi-star"></i>
-         <i class="bi bi-star"></i>
-       <i class="bi bi-star"></i>
-         <i class="bi bi-star"></i>
-         <i class="bi bi-star"></i>
-         </p>
-           <h5</h5>
-        </div>
-        </div>
-                        </template>
+<div
+			id="carouselExampleCaptions"
+			class="carousel slide"
+			data-bs-ride="carousel"
+		>
+			<div class="carousel-indicators">
+				<!-- carousel controllers -->
+				<button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="0"
+					class="active"
+					aria-current="true"
+					aria-label="Slide 1"
+				></button>
+				<button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="1"
+					aria-label="Slide 2"
+				></button>
+				<button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="2"
+					aria-label="Slide 3"
+				></button>
+			</div>
+			<!-- carousel -->
+			<div class="carousel-inner"></div>
+		</div>
+
+
+<!-- main-carousel -->
+		<div
+			id="carouselExampleCaptions"
+			class="carousel slide"
+			data-bs-ride="carousel"
+		>
+			<div class="carousel-indicators">
+				<!-- carousel controllers -->
+				<button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="0"
+					class="active"
+					aria-current="true"
+					aria-label="Slide 1"
+				></button>
+				<button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="1"
+					aria-label="Slide 2"
+				></button>
+				<button
+					type="button"
+					data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="2"
+					aria-label="Slide 3"
+				></button>
+			</div>
+			<!-- carousel -->
+			<div class="carousel-inner"></div>
+		</div>
+
+		<!-- advert section -->
+		<section class="main__container marq" id="notify">
+			<h2>Trending</h2>
+			<marquee class="css2" direction="left">
+				<p>
+					<span>Public Announcement!!!</span> You can dm for adverts
+					and promotion. New release will be updated on sunday.Please
+					note this project was written and designed by me
+				</p>
+			</marquee>
+		</section>
+
+		<!-- section3 -->
+		<!-- welcome section -->
+		<section class="main__container mt-5" id="welcome">
+			<pre class="text-center fs-4">WELCOME TO OUR SITE</pre>
+			<h2 class="text-capitalize text-center mb-3">
+				WATCH ANIME ONLINE IN HIGH QUALITY
+			</h2>
+			<div class="tab-titles">
+				<p class="tab-link">RECENT</p>
+				<p class="tab-link">TRENDING</p>
+				<p class="tab-link">MOST VIEWED</p>
+				<p class="tab-link">TOP RATED</p>
+			</div>
+			<!-- First Movie section -->
+			<div id="anime__movies" class="allContainer"></div>
+		</section>
+
+		<!-- new season -->
+		<section id="new">
+			<pre class="text-center fs-4">ANIME</pre>
+			<h2 class="text-capitalize text-center mb-3">NEW SEASON</h2>
+			<div id="new__season" class="allContainer"></div>
+		</section>
+
+		<!-- recently -->
+		<section class="main__container carousel1 mb-5" id="recently">
+			<pre class="text-center fs-4">ANIME</pre>
+			<h2 class="text-capitalize text-center mb-3">
+				RECENTLY ADDED SERIES
+			</h2>
+			<div class="carousel-wrapper">
+				<!-- Movies container -->
+				<div class="carousel-wrapper-items"></div>
+			</div>
+			<div class="controllers">
+				<button class="prev-btn">Prev</button>
+				<button class="next-btn">Next</button>
+			</div>
+		</section>
+
+		
+
+		<!-- grab a deal -->
+		<section class="main__container" id="grab">
+			<pre class="text-center fs-4">START SECURE BROWSING</pre>
+			<h2 class="text-capitalize text-center mb-3">
+				Ready to Grab the deal?
+			</h2>
+
+			<div class="container__flex mydeal">
+				<div class="card text-center" style="width: 18rem">
+					<div class="mydeal__img">
+						<img
+							src="https://img.freepik.com/free-vector/laptop-computer-with-academic-icon-white-background_1308-70256.jpg?size=626&ext=jpg&ga=GA1.2.1207481026.1670858809&semt=sph"
+							class="card-img-top"
+							alt="..."
+						/>
+					</div>
+
+					<!-- <i class="fa-10x bi-laptop card-img-top"></i> -->
+					<div class="card-body">
+						<h5 class="card-title">1-month plan</h5>
+						<p class="card-text fs-1 fw-bolder">$ 9.99</p>
+						<pre class="">per month</pre>
+						<a href="#" class="btn btn-lg btn-danger"
+							>GET THE DEAL</a
+						>
+						<p class="mt-2">
+							<i
+								class="bi bi-shield-check me-1"
+								style="color: green"
+							></i>
+							30-days money-back guarantee
+						</p>
+					</div>
+				</div>
+
+				<div class="card text-center" style="width: 18rem">
+					<div class="mydeal__img">
+						<img
+							src="https://img.freepik.com/premium-vector/teacher-explain-about-computer-internet-student_97632-7258.jpg?size=626&ext=jpg&ga=GA1.2.1207481026.1670858809&semt=sph"
+							class="card-img-top"
+							alt="..."
+						/>
+					</div>
+
+					<!-- <i class="fa-10x bi-laptop card-img-top"></i> -->
+					<div class="card-body">
+						<h5 class="card-title">12-months plan</h5>
+						<p class="card-text fs-1 fw-bolder">$ 3.99</p>
+						<button
+							class="btn btn-danger mb-1 opp"
+							style="border-radius: 20px"
+						>
+							Save 68%
+						</button>
+						<pre class="">per month</pre>
+						<p class="card-text">
+							$286.80 $89.00 for the first 2 years
+						</p>
+						<a href="#" class="btn btn-lg btn-danger"
+							>GET THE DEAL</a
+						>
+						<p class="mt-2">
+							<i
+								class="bi bi-shield-check me-1"
+								style="color: green"
+							></i>
+							30-days money-back guarantee
+						</p>
+					</div>
+				</div>
+
+				<div class="card text-center" style="width: 18rem">
+					<div class="mydeal__img">
+						<img
+							src="https://img.freepik.com/free-vector/internet-communication-set-icons_24877-58872.jpg?size=338&ext=jpg&ga=GA1.1.1207481026.1670858809&semt=sph"
+							class="card-img-top"
+							alt="..."
+						/>
+					</div>
+
+					<!-- <i class="fa-10x bi-laptop card-img-top"></i> -->
+					<div class="card-body">
+						<h5 class="card-title">6-months plan</h5>
+						<p class="card-text fs-1 fw-bolder">$ 6.99</p>
+						<pre class="">per month</pre>
+						<a href="#" class="btn btn-lg btn-danger"
+							>GET THE DEAL</a
+						>
+						<p class="mt-2">
+							<i
+								class="bi bi-shield-check me-1"
+								style="color: green"
+							></i>
+							30-days money-back guarantee
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- email -->
+
+		<section class="container" id="email">
+			<h2 class="text-center">Start for your first 30 days.</h2>
+			<h4 class="text-center">
+				Ready to watch? Enter your email to create or restart your
+				membership.
+			</h4>
+
+			<!-- <div class="container"> -->
+			<div class="subscribe">
+				<input
+					type="email"
+					class="form-control p-2 subscribe__input"
+					style="border-radius: 0px"
+					placeholder="TYPE YOUR EMAIL ADDRESS"
+					id="exampleInputEmail1"
+					aria-describedby="emailHelp"
+				/>
+
+				<div class="subscribe__button">
+					<button
+						class="btn btn-lg btn-danger"
+						style="border-radius: 0px"
+					>
+						GET STARTED
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<hr />
+
+			<!-- footer section -->
+		<footer class="main__container" id="footer">
+			<div class="container__flex footer__container">
+				<div class="footer__questions">
+					<h5>Questions? Call 0850-380-6444</h5>
+					<p>
+						Format for custom post types that are not book or you
+						can use else if to specify a second post type the same
+						way as above.
+					</p>
+					<div class="conn mb-5">
+						<a href="">
+							<img src="./images/app-store.png" alt=""
+						/></a>
+					</div>
+				</div>
+
+				<div>
+					<ul>
+						<h4>O'Damisi</h4>
+						<li><a href="">O'Damisi</a></li>
+						<li><a href="">Devices</a></li>
+						<li><a href="">Tips</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+				</div>
+				<div>
+					<ul>
+						<h4>SUPPORTS</h4>
+						<li><a href="">FAQ</a></li>
+						<li><a href="">Help center</a></li>
+						<li><a href="">Accounts</a></li>
+						<li>
+							<a href=""
+								>Support
+								<i class="bi bi-question-circle ms-2"></i
+							></a>
+						</li>
+						<li><a href="">Media Center</a></li>
+					</ul>
+				</div>
+
+				<div>
+					<ul>
+						<h4>POLICIES</h4>
+
+						<li><a href="">Private Policy</a></li>
+						<li><a href="">Terms & Agreements</a></li>
+						<li><a href="">Legal Notices</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+		<!-- little footer -->
+
+		<div class="container__flex mylil text-center">
+			<p>© 2023 Deife | Online Movie Streaming</p>
+			<p>Site create by O'Damisi</p>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+			crossorigin="anonymous"
+		></script>
+		<!-- <script src="app.js"></script> -->
+		<script src="index.js"></script>
 
-                       </div><!-- mycontainer -->
-                    </div>
-                    <div class="tab-contents" id="languages">
 
-                       <div class="myContain">
-       
 
-                       </div><!-- mycontainer -->
-
-
-                    </div>
-                    <div class="tab-contents" id="experience">
-                    
-                         <div class="myContain">
-      
-                       </div><!-- mycontainer -->
-
-                    </div>
-                    <div class="tab-contents" id="education">
-                           <div class="myContain">
-      
-
-                       </div><!-- mycontainer -->
-                    </div>
-                
-        </div>
-
-
-
-</section>
-
-
-
-<!-- new season -->
-
-  <section class="container-fluid myseason" id="nSeason">
- <pre class="text-center fs-4">ANIME</pre>
-  <h2 class="text-capitalize text-center mb-3">NEW SEASON</h2>
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="last">
-
-        
-
-
-        
-   
-
-
-      </div>
-
-    </div>
-    <div class="carousel-item">
-     
-  <div class="last">
-
-      
-
-
-         
-        
-
-        
-       
-      </div>
-
-
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-
-    
-  </section>
-
-
-
-
-
-  <!-- recently -->
-
-  <section class="container-fluid myseason" id="recently">
- <pre class="text-center fs-4">ANIME</pre>
-  <h2 class="text-capitalize text-center mb-3">RECENTLY ADDED SERIES</h2>
-      <div id="carouselExampleControlsOne" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="last">
-
-        
-    </div>
-    <div class="carousel-item">
-
-          <div class="last">
-
-       
-
-      </div>
-
-    </div>
-    <div class="carousel-item">
-     
- 
-          <div class="last">
-
-       
-
-      </div>
-
-
-      </div>
-
-
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsOne" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsOne" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-    
-  </section>
-
-
-
-<!-- join -->
-
-<section class="container-fluid" id="join">
-
-
-  <!-- https://pbs.twimg.com/media/E3YRGaLXoAIuBBB?format=jpg&name=900x900 -->
-</section>
-
-
-
-
-<!-- Blog -->
-
-  <section class="container-fluid" id="blog">
-<pre class="text-center fs-4">DAILY NEWS</pre>
-  <h2 class="text-capitalize text-center mb-3">RECENT BLOG</h2>
-    <div class="container-fluid bloggy">
-
-      
-      
-
-
-  
-
-
-        
-    </div>
-                <a href="#" class="nav-item nav-link text-capitalize text-center m-2">
-                  <button class="btn btn-lg btn-danger">READ MORE</button>
-                </a>
-
-
-  </section>
-
-
-
-  <!-- grab a deal -->
-  <section class="container-fluid" id="grab">
-<pre class="text-center fs-4">START SECURE BROWSING</pre>
-  <h2 class="text-capitalize text-center mb-3">Ready to Grab the deal?</h2>
-      
-  <div class="mydeal">
-
-    
-
-
-
-
-  </div>
-
-
-
-
-  </section>
-
-
-
-
-
-  <!-- email -->
-
-  <section class="container" id="email">
-
-    <h2  class="text-center">Start for your first 30 days.</h2>
-    <h4  class="text-center">Ready to watch? Enter your email to create or restart your membership.</h4>
-
-    <!-- <div class="container"> -->
-  <div class="rowss m-3">
-    <div class="col-5 ">
-    <input type="email" class="form-control p-2" style="border-radius: 0px;" placeholder="TYPE YOUR EMAIL ADDRESS"
-     id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="cols">
-     <button class="btn btn-lg btn-danger" style="border-radius: 0px;">GET STARTED</button>
-    </div>
-  </div>
-
-
-  </section>
-
-<hr>
-
-
-<!-- footer section -->
-<section class="container-fluid" id="footer">
-
-   <div class="rows">
-    <div class="col-4 p-2">
-     <h5>Questions? Call 0850-380-6444</h5>
-     <p>Format for custom post types that are
-       not book or you can use else 
-       if to specify a second post
-        type the same way as above.
-      </p>
-      <div class="conn">
-       <a href=""> <img src="./images/app-store.png" alt=""></a>
-      </div>
-    </div>
-
-
-    <div class="col">
-     <ul>
-      <h4>Adeife</h4>
-      <li><a href="">Adeife</a></li>
-      <li><a href="">Devices</a></li>
-        <li><a href="">Tips</a></li>
-          <li><a href="">Contact</a></li>
-     </ul>
-    </div>
-    <div class="col">
-      <ul>
-      <h4>SUPPORTS</h4>
-      <li><a href="">FAQ</a></li>
-      <li><a href="">Help center</a></li>
-        <li><a href="">Accounts</a></li>
-          <li><a href="">Support <i class="bi bi-question-circle ms-2"></i></a></li>
-           <li><a href="">Media Center</a></li>
-     </ul>
-    </div>
-
-     <div class="col">
-     <ul>
-      <h4>POLICIES</h4>
-
-      <li><a href="">Private Policy</a></li>
-      <li><a href="">Terms & Agreements</a></li>
-        <li><a href="">Legal Notices</a></li>
-     </ul>
-    </div>
-  </div>
-
-
-
-</section>
-
-
-<!-- little footer -->
-
-<div class="container-fluid  mylil">
-  <p>© 2023 Deife | Online Movie Streaming</p>
-  <p>Site create by O'Damisi</p>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-    <script src="app.js"></script>
   </body>
 </html>

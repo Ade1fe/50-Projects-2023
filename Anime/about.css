@@ -1,49 +1,69 @@
-.navbar-nav li a:hover{
+body, .container-fluid, main{
+    background-color: #fff !important;
+}
+
+.navbar{
+    position: sticky;
+    top:0;
+    right: 0;
+    padding: 1rem !important;
+    z-index: 999999999999;
+    background-color: #fff !important;
+}
+
+.navbar-nav li a:hover {
     color: #f11f !important;
     font-weight: bolder;
 }
-
 main{
+    margin-top: 80vh;
+}
+.imgContainer {
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 2rem;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    z-index: -10;
+}
+
+.imgContainer img {
     width: 100%;
     height: 100%;
-    border: 2px solid red;
-}
-.imgContainer{
-border: 2px solid blue;
-width: 100%;
-height: 100%;
-margin-bottom: 2rem;
-}
-.imgContainer img{
-    width: 100%;
-    height: 100%;
+    display: block;
     object-fit: cover;
 }
 
 /* section3 */
-#section3 h1 , p{
+#section3 h1,
+p {
     width: 70%;
     margin: auto;
     padding: 0.5rem 0rem;
 }
-.col{
+
+.col {
     border-left: 2px solid #f1f1f2;
     margin: 2rem 0rem;
 }
- .col img{
+
+.col img {
     width: 20%;
     margin-bottom: 1rem;
+   
 
 }
- .rows {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     /* border: 2px solid red !important; */
 
- }
+.rows {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* border: 2px solid red !important; */
 
-#section4{
+}
+
+#section4 {
     margin: 2rem 0rem;
     background-image: url('https://img.freepik.com/free-vector/background-with-night-city-neon-lights_1441-2822.jpg?size=626&ext=jpg&ga=GA1.2.1207481026.1670858809&semt=sph');
     background-position: center;
@@ -56,7 +76,8 @@ margin-bottom: 2rem;
     justify-content: left;
     align-items: center;
 }
-.newsletter{
+
+.newsletter {
     background-color: rgba(0, 0, 0, 0.7);
     width: 50%;
     height: 320px;
@@ -65,19 +86,22 @@ margin-bottom: 2rem;
 }
 
 /* section5 */
-#section5{
+#section5 {
     margin: 4rem 0rem;
     margin-bottom: 2rem;
 }
-.card-img-top{
-    border-radius: 50% ;
+
+.card-img-top {
+    border-radius: 50%;
 }
-.card{
+
+.card {
     padding: 0.5rem;
     width: 18rem;
     position: relative;
 }
-.card-container{
+
+.card-container {
     display: flex;
     /* flex-direction: column; */
     flex-wrap: wrap;
@@ -85,7 +109,8 @@ margin-bottom: 2rem;
     align-items: center;
     gap: 20px;
 }
-.card:hover{
+
+.card:hover {
     transition: transform 0.3s ease-out;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
@@ -100,18 +125,18 @@ margin-bottom: 2rem;
     align-items: center;
     gap: 20px;
     padding: 0.5rem;
-   margin-top: 0.4rem;
-transition: transform 0.3s ease-out;
-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 0.4rem;
+    transition: transform 0.3s ease-out;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .hover a:hover {
     transform: translateY(-10px);
 }
 
-.hover a i{
+.hover a i {
     font-size: 20px;
-   
+
 }
 
 
@@ -129,13 +154,15 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     justify-content: left;
     align-items: center;
 }
-.co{
+
+.co {
     margin: auto;
     background-color: #000;
     padding: 1rem;
     width: 100%;
 }
-.co button:hover{
+
+.co button:hover {
     background-color: transparent;
     color: #fff;
     border: 2px solid red;
@@ -143,56 +170,59 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 
 /* section7 */
-#section7{
+#section7 {
     margin: 2rem 0rem;
     padding: 2rem 0rem;
 }
-.box h2{
+.box h2 {
     text-align: center;
-    border: 2px solid blue;
-    /* padding: 1.5rem 1rem; */
+   
 }
-.box p{
+
+.box p {
     font-size: 17px;
     text-align: left;
 }
-.box {
-    border: 2px solid red;
-  
-}
-.contain{
+
+.contain {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    gap: 20px;
+
 }
-.imgcon{
+
+.imgcon {
     max-width: 100px;
     height: 100px;
     border: 2px solid red;
     border-radius: 50%;
     padding: 3px;
 }
-.imgcon img{
+
+.imgcon img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
     border: 2px red dashed;
 }
-.tex{
+
+.tex {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     gap: 10px;
 }
-.in h4{
+
+.in h4 {
     font-size: 17px;
     margin-left: 1rem;
     margin-bottom: 0rem;
 }
-.in p{
+
+.in p {
     font-size: 13px;
     padding: 0;
 }
@@ -208,32 +238,45 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 
 @media (max-width:670px) {
-    .rows{
+    .rows {
         display: flex !important;
         flex-direction: column !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
-        /* border: 2px solid red !important; */
-       
+
     }
-    .col{
+
+    .col {
         border: none;
         margin: 1rem 0rem;
         border-bottom: 2px solid #f1f1f2;
         gap: 0;
     }
-    .newsletter{
+
+    .newsletter {
         width: 100%;
         /* top: 2%; */
         left: 0%;
+    }
+    .mylil{
+        display: grid !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 20px 0rem !important;
     }
 }
 
 @media (max-width:500px) {
     .contain{
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        gap: 20px 0rem;
+        display: grid !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 20px 0rem !important;
+    }
+    .mylil p{
+        width: 100% !important;
+        margin: 0 !important;
+        text-align: center !important;
     }
 }
+
