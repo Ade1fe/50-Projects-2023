@@ -633,15 +633,6 @@ ul.nav li a {
 	animation-delay: 0.2s;
 }
 
-/* bloggy */
-.bloggy {
-	display: grid;
-	/* border: 2px solid red; */
-	grid-template-columns: repeat(3, auto);
-	justify-content: center;
-	align-items: center;
-	gap: 25px;
-}
 
 /* Carousel */
 

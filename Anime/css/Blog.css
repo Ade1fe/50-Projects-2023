@@ -1,0 +1,171 @@
+body,
+.container-fluid,
+main {
+    background-color: #fff !important;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    right: 0;
+    padding: 1rem !important;
+    z-index: 999999999999;
+    background-color: #fff !important;
+}
+
+.navbar-nav li a:hover {
+    color: #f11f !important;
+    font-weight: bolder;
+}
+
+main {
+    margin-top: 80vh;
+}
+
+.imgContainer {
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 2rem;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    z-index: -10;
+}
+
+.imgContainer img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+#blog{
+    margin-bottom: 5rem;
+}
+
+.blogC, .blogD{
+    display: flex;
+    /* border: 2px saddlebrown solid; */
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0rem;
+}
+
+.imgC,
+.imgD {
+    overflow: hidden;
+    width: 400px;
+    height: 100%;
+    padding: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.imgC img , .imgD img{
+width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.myText, .myTextD{
+    width: 50%;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.imgC h2,
+.imgD h2{
+    text-align: center;
+}
+.btn:hover{
+    background-color: transparent !important;
+    color: #f10 !important;
+    border: 2px solid #f10 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:700px) {
+    .blogC, .blogD{
+    display: grid ;
+    grid-template-columns: repeat(1 , auto);
+    justify-content: center;
+    align-items: center;
+}
+.imgC,
+.imgD {
+    width: 20%;
+    margin: auto;
+    padding: 0rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.myText, .myTextD{
+    width: 100%;
+    /* height: 100%; */
+}
+    .One{
+        order:1;
+    }
+     .Two{
+        order:2;
+    }
+     .Three{
+        order:3;
+    }
+     .Four{
+        order:4;
+    }
+    .Five{
+            order: 5;
+    }
+    .Six{
+        order: 6;
+    }
+    .seven{
+        order: 7;
+    }
+    .eight{
+        order: 8;
+    }
+    .nine{
+        order: 9;
+    }
+    .ten{
+        order: 10;
+    }
+}
+@media (max-width:500px) {
+    .blogC, .blogD{
+    /* margin: 0.4rem 0rem; */
+}
+        .imgC,
+        .imgD {
+    width: 30%;
+    margin: auto;
+    padding: 0rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}   
+}
+
+@media (max-width:400px) {
+    .btn {
+            display: none !important;
+        }
+}
+
+@media (max-width:330px) {
+        .imgC,
+        .imgD {
+    width: 30%;
+    margin: auto;
+    padding: 0rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}   
+
+}
