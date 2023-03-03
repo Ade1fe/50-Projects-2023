@@ -1,0 +1,43 @@
+
+.my{
+    margin: 2rem 0rem;
+    padding-top: 1rem;
+}
+
+.faq ul{
+    width: 80% !important;
+    list-style: none;
+    margin: auto;
+    margin-bottom: 3rem;
+    border: 1px solid #f3f3f3;
+    padding: 0.5rem 0;
+}
+.faq ul li span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq ul li{
+    font-size: 20px;
+    padding: 1rem 0.7rem;
+    cursor: pointer;
+    border-bottom: 1px solid #f3f3f3;
+    font-weight: bold;
+}
+.faq ul li:hover{
+    color: #f10;
+}
+.faq ul li p{
+    color: #000;
+}
+.faq ul li p:hover {
+    color: #000;
+}
+.faq ul li .card{
+    margin: 0.5rem 0rem;
+}
+.faq span .bi{
+    background-color: #f1f1f1;
+    padding: 0.3rem;
+    border-radius: 30px;
+}
