@@ -1,0 +1,36 @@
+.headOne span{
+    font-weight: bolder;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.headOne li{
+    margin: 0.5rem 0rem;
+    font-size: 1.1rem;
+    
+}
+.headOne ul{
+    padding:1rem 2rem;
+
+   
+}
+.headOne p   {
+    margin: 1rem 0rem;
+}
+.headOne{
+    padding: 2rem 1rem;
+    padding-bottom: 0rem;
+}
+.headOne span:hover{
+    color: #f10;
+}
+
+
+
+
+@media (max-width:600px){
+    .headOne ul{
+    padding:1rem;
+
+   
+}
+}

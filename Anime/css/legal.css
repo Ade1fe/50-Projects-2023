@@ -1,0 +1,24 @@
+span{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.headOne h2, .headOne p{
+    padding: 1rem 0.7rem;
+}
+pre{
+    padding: 1rem 0.7rem;
+    padding-bottom: 0rem;
+}
+
+.headOne p{
+    font-size: 1.1rem;
+}
+
+
+
+@media (max-width:600px) {
+    .headOne p{
+    font-size: 1rem;
+}
+}

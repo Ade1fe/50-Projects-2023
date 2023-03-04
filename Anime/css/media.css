@@ -1,0 +1,71 @@
+
+.headOne{
+padding: 1rem 0.6rem;
+margin: 2rem 0rem;
+}
+.newspaper {
+    column-count: 2;
+    text-align: left;
+   
+}
+.mybox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 50px;
+}
+.boxx{
+    width: 22rem;
+    border: 2px #f1f1f1f1 solid;
+    text-align: left;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+.boxx:hover{
+    border-bottom: 5px solid #f10;
+}
+.box3{
+    width: 26rem;
+    padding: 0rem 0.5rem;
+}
+i{
+    text-align: left;
+    /* border: 2px solid green; */
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+@media (max-width:600px) {
+    .mybox{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap:  50px 0px;
+}
+.boxx, .box3{
+    width: 100%;
+}
+}
+
+
+@media (max-width:350px) {
+    .newspaper {
+    column-count: 1;
+    text-align: center;
+    width: 100%;
+   
+}
+.headOne{
+    width: 100%;
+}
+}
