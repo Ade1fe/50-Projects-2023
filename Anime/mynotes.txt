@@ -147,3 +147,185 @@ const searchFunction = () => {
 	align-items: center;
 	gap: 25px;
 }
+
+
+
+
+
+.footer__container {
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+footer ul {
+	list-style: none;
+}
+
+footer ul li a {
+	text-decoration: none;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+footer ul li a:hover{
+	color: #dc2f02;
+}
+.footer__questions {
+	text-align: center;
+}
+
+.mylil {
+	gap: 20px 30px;
+	align-items: center;
+	justify-content: center;
+	background-color: #f9f9f9f9;
+	padding: 2rem 1rem;
+	padding-bottom: 1rem;
+}
+/* Carousel */
+
+/* end */
+
+@media (max-width:500px) {
+	.mylil {
+		display: grid !important;
+		justify-content: center !important;
+		align-items: center !important;
+		gap: 20px 0rem !important;
+		}
+		.mylil p{
+	width: 100% !important;
+	margin: 0 !important;
+	text-align: center !important;
+    }
+	.carousel-wrapper-items{
+		width: 20rem !important;
+	}
+	.fst {
+    /* border: 2px solid blue; */
+	width: 100%;
+    display: grid !important;
+    align-items: center !important;
+    justify-content: center !important;
+	margin-bottom: 1rem !important;
+    /* height: 4rem; */
+
+}
+.icons, .form__search{
+	/* width: 295px !important; */
+}
+.tab-titles {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 20px;
+	grid-template-columns: repeat(2, auto);
+	margin-bottom: 1rem !important;
+}
+}
+
+@media (min-width: 425px) {
+	.allContainer {
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 0 10px;
+		justify-content: center;
+	}
+	.cards {
+		width: 180px;
+		max-width: 300;
+		height: 350px;
+		flex-grow: 1;
+	}
+
+	.mydeal {
+		justify-content: space-evenly;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.mydeal__img {
+		height: 200px;
+	}
+	.footer__container {
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-evenly;
+		width: 100%;
+		align-items: flex-start;
+	}
+	.footer__questions {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	
+}
+
+@media (min-width: 768px) {
+	.carousel__img {
+		height: 60vh;
+	}
+	.allContainer {
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 0 20px;
+	}
+	.cards {
+		width: 250px;
+		max-width: 400px;
+		height: 350px;
+		flex-grow: 1;
+	}
+
+	.carousel1 {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.carousel-wrapper {
+		display: flex;
+		transition: transform 0.3s ease;
+	}
+
+	.carousel-wrapper-items {
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: row;
+	}
+	.carousel-caption{
+		font-size: 16px;
+	}
+	.carousel-caption h3{
+		font-size: 2.5rem !important;
+	}
+	.carousel-caption h6 {
+		font-size: 15px !important;
+	}
+
+	.carousel-item:last-child {
+		margin-right: 0;
+	}
+
+	.mydeal {
+		justify-content: space-evenly;
+		flex-direction: row;
+		gap: 20px;
+	}
+	.footer__questions {
+		padding: 0 20%;
+	}
+}
+
+@media (min-width: 1024px) {
+	.carousel__img {
+		height: 80vh;
+	}
+	.carl {
+		right: -20%;
+		width: 350px;
+		transform: translateX(100%);
+	}
+}

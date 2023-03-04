@@ -100,7 +100,7 @@
                   >
                 </li>
                 <li class="nav-item px-3">
-                  <a class="nav-link" href="#">Genre</a>
+                  <a class="nav-link" href="./pages/Blog.html">Blog</a>
                 </li>
                 <li class="nav-item dropdown px-3">
                   <a
@@ -113,38 +113,28 @@
                     Animes
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Trending</a></li>
-                    <li><a class="dropdown-item" href="#">Popular</a></li>
+                    <li><a class="dropdown-item" href="#trend">Trending</a></li>
                     <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#">New Season</a></li>
-                    <li>
+                    <li><a class="dropdown-item" href="#viewed">Most Viewed</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                      <li><a class="dropdown-item" href="#recent">Recent</a></li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li><a class="dropdown-item" href="#recentlyAdded">Recently Added</a></li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li><a class="dropdown-item" href="#rated">Top Rated</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#season">New Season</a></li>
+                    <!-- <li>
                       <a class="dropdown-item" href="#">Anime Single Page</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown px-3">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    News
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Popular news</a></li>
-                    <li><a class="dropdown-item" href="#">old news</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#">vicious news</a></li>
+                    </li> -->
                   </ul>
                 </li>
                 <li class="nav-item px-3">
-                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="./pages/contactUs.html">Contact</a>
                 </li>
               </ul>
               <div class="navbar-nav ms-auto me-2 sec">
-                <span class="fa-stack fa-1x mt-3" id="note" data-count="3">
+                <span class="fa-stack fa-1x mt-3" id="note" data-count="1">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-bell fa-stack-1x fa-inverse"></i>
                 </span>
@@ -256,10 +246,10 @@
         WATCH ANIME ONLINE IN HIGH QUALITY
       </h2>
       <div class="tab-titles">
-        <p class="tab-link">RECENT</p>
-        <p class="tab-link">TRENDING</p>
-        <p class="tab-link">MOST VIEWED</p>
-        <p class="tab-link">TOP RATED</p>
+        <p class="tab-link" id="recent">RECENT</p>
+        <p class="tab-link" id="trend">TRENDING</p>
+        <p class="tab-link" id="viewed">MOST VIEWED</p>
+        <p class="tab-link" id="rated">TOP RATED</p>
       </div>
       <!-- First Movie section -->
       <div id="anime__movies" class="allContainer"></div>
@@ -268,14 +258,14 @@
     <!-- new season -->
     <section id="new">
       <pre class="text-center fs-4">ANIME</pre>
-      <h2 class="text-capitalize text-center mb-3">NEW SEASON</h2>
+      <h2 class="text-capitalize text-center mb-3" id="season">NEW SEASON</h2>
       <div id="new__season" class="allContainer"></div>
     </section>
 
     <!-- recently -->
     <section class="main__container carousel1 mb-5" id="recently">
       <pre class="text-center fs-4">ANIME</pre>
-      <h2 class="text-capitalize text-center mb-3">RECENTLY ADDED SERIES</h2>
+      <h2 class="text-capitalize text-center mb-3" id="recentlyAdded">RECENTLY ADDED SERIES</h2>
       <div class="carousel-wrapper">
         <!-- Movies container -->
         <div class="carousel-wrapper-items"></div>
@@ -409,23 +399,20 @@
 
         <div>
           <ul>
-            <h4>O'Damisi</h4>
-            <li><a href="">O'Damisi</a></li>
-            <li><a href="">Devices</a></li>
-            <li><a href="">Tips</a></li>
-            <li><a href="">Contact</a></li>
+            <h4>Jojo's-Anime</h4>
+            <li><a href="./index.html">Jojo's-Anime</a></li>
+            <li><a href="./pages/about.html">Tips</a></li>
+            <li><a href="./pages/contactUs.html">Contact</a></li>
           </ul>
         </div>
         <div>
           <ul>
             <h4>SUPPORTS</h4>
-            <li><a href="">FAQ</a></li>
-            <li><a href="">Help center</a></li>
-            <li><a href="">Accounts</a></li>
+            <li><a href="./pages/faq.html">FAQ</a></li>
             <li>
-              <a href="">Support <i class="bi bi-question-circle ms-2"></i></a>
+              <a href="./pages/support.html">Support <i class="bi bi-question-circle ms-2"></i></a>
             </li>
-            <li><a href="">Media Center</a></li>
+            <li><a href="./pages/media.html">Media Center</a></li>
           </ul>
         </div>
 
@@ -433,9 +420,8 @@
           <ul>
             <h4>POLICIES</h4>
 
-            <li><a href="">Private Policy</a></li>
-            <li><a href="">Terms & Agreements</a></li>
-            <li><a href="">Legal Notices</a></li>
+            <li><a href="./pages/private.html">Private Policy</a></li>
+            <li><a href="./pages/legal.html">Legal Notices</a></li>
           </ul>
         </div>
       </div>

@@ -41,107 +41,41 @@ main {
 }
 
 
-.footer__container {
-    /* flex-direction: column; */
-    display: grid;
-    grid-template-columns: repeat(1, auto);
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 0.5rem;
+.flexmi{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: 0;
+    
+}
+.footer__questions{
+    padding: 2rem 1.5rem;
     padding-bottom: 0rem;
-    /* border: 2px solid red; */
-    text-align: center;
-   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
 }
-
-footer ul {
-    list-style: none;
-}
-
-footer ul li a {
+.flexmi li a{
+     color: #000;
     text-decoration: none;
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 15px;
+    font-weight: 500;
+}
+.flexmi li a:hover{
+    color: #f10;
+}
+.mylil{
+    background-color: #f1f1f1;
+    padding: 0.5rem;
 }
 
-footer ul li a:hover {
-    color: #dc2f02;
-}
 
-.footer__questions {
-    text-align: center;
-}
-
-.mylil {
-    gap: 20px 30px;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9f9;
-    padding: 2rem 1rem;
-    padding-bottom: 0rem;
-}
-
-/* Carousel */
-
-/* end */
-
-@media (max-width:500px) {
-    .mylil {
-        display: grid !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 20px 0rem !important;
+@media (max-width:550px){
+    .flexmi {
+        display: grid;
     }
-
-    .mylil p {
-        width: 100% !important;
-        margin: 0 !important;
-        text-align: center !important;
-    }
-   
-}
-
-@media (min-width: 425px) {
-    .allContainer {
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 0 10px;
-        justify-content: center;
-    }
-
-    .footer__container {
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-evenly;
-        width: 100%;
-        align-items: flex-start;
-        padding: 2rem 0rem;
-        padding-bottom: 0;
-        display: flex;
-       
-    }
-
-    .footer__questions {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-}
-
-@media (min-width: 768px) {
-    .allContainer {
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 0 20px;
-    }
-
-   
-
-    .footer__questions {
-        padding: 0 20%;
+    .flexmi div h4{
+        text-align: left;
+        margin: 5px;
     }
 }
-
