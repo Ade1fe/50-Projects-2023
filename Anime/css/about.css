@@ -143,7 +143,7 @@ p {
 /* section6 */
 #section6 {
     margin: 2rem 0rem;
-    background-image: url('./images/up.jpg');
+    background-image: url('../images/up.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

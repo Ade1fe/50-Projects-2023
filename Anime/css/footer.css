@@ -1,3 +1,111 @@
+.text__animation {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    animation: 3s linear 0s normal none infinite running npa;
+    color: #f10;
+    font-size: 2em;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+@-webkit-keyframes npa {
+    0% {
+        text-shadow: -6px 4px 0px red;
+    }
+
+    10% {
+        text-shadow: 4px -6px 0px green;
+    }
+
+    20% {
+        text-shadow: -9px 4px 0px blue;
+    }
+
+    30% {
+        text-shadow: 4px -6px 0px yellow;
+    }
+
+    40% {
+        text-shadow: -8px 4px 0px orange;
+    }
+
+    50% {
+        text-shadow: 4px 5px 0px purple;
+    }
+
+    60% {
+        text-shadow: -6px 4px 0px brown;
+    }
+
+    70% {
+        text-shadow: 4px 7px 0px pink;
+    }
+
+    80% {
+        text-shadow: -9px -4px 0px lime;
+    }
+
+    90% {
+        text-shadow: 4px -6px 0px cyan;
+    }
+
+    100% {
+        text-shadow: -9px 4px 0px teal;
+    }
+}
+
+@keyframes npa {
+    0% {
+        text-shadow: -6px 4px 0px red;
+    }
+
+    10% {
+        text-shadow: 4px -6px 0px green;
+    }
+
+    20% {
+        text-shadow: -9px 4px 0px blue;
+    }
+
+    30% {
+        text-shadow: 4px -6px 0px yellow;
+    }
+
+    40% {
+        text-shadow: -8px 4px 0px orange;
+    }
+
+    50% {
+        text-shadow: 4px 5px 0px purple;
+    }
+
+    60% {
+        text-shadow: -6px 4px 0px brown;
+    }
+
+    70% {
+        text-shadow: 4px 7px 0px pink;
+    }
+
+    80% {
+        text-shadow: -9px -4px 0px lime;
+    }
+
+    90% {
+        text-shadow: 4px -6px 0px cyan;
+    }
+
+    100% {
+        text-shadow: -9px 4px 0px teal;
+    }
+}
+
 
 body,
 main {
@@ -19,13 +127,13 @@ main {
 }
 
 main {
-    margin-top: 80vh;
+    margin-top: 90vh;
    width: 100%;
 }
 
 .imgContainer {
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     margin-bottom: 2rem;
     position: fixed;
     top: 50px;
@@ -42,19 +150,19 @@ main {
 
 
 .flexmi{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    margin: 0;
+    display: flex !important;
+    justify-content: space-evenly !important;
+    align-items: flex-start !important;
+    margin: 0 !important;
     
 }
 .footer__questions{
-    padding: 2rem 1.5rem;
-    padding-bottom: 0rem;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
+    padding: 3rem 1.5rem !important;
+    padding-bottom: 2rem !important;
+   display: flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+   flex-direction: column !important; 
 }
 .flexmi li a{
      color: #000;
