@@ -132,6 +132,7 @@ main {
 }
 
 .imgContainer {
+    max-width: 100vw;
     width: 100%;
     height: 90vh;
     margin-bottom: 2rem;
@@ -154,6 +155,7 @@ main {
     justify-content: space-evenly !important;
     align-items: flex-start !important;
     margin: 0 !important;
+    flex-wrap: wrap;
     
 }
 .footer__questions{
@@ -163,6 +165,9 @@ main {
    align-items: center !important;
    justify-content: center !important;
    flex-direction: column !important; 
+}
+.flexmi ul{
+    list-style: none;
 }
 .flexmi li a{
      color: #000;
