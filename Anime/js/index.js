@@ -253,9 +253,7 @@ const searchFunction = () => {
               <div class="search__item-img">
                 <img src=${data.images.webp.large_image_url} alt=${data.title}/>
               </div>
-              <a href="single.html?id=${data.mal_id}" class="search__item-title">
-                ${data.title}
-              </a>
+             <a href=../pages/single.html?id=${data.mal_id} class="search__item-title"> ${data.title} </a>
             </div>
           `;
           resultContainer.innerHTML += searchCard; 

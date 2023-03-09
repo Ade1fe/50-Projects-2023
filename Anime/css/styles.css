@@ -810,6 +810,15 @@ footer ul li a:hover{
 	grid-template-columns: repeat(2, auto);
 	margin-bottom: 1rem !important;
 }
+.title {
+	animation: 3s linear 0s normal none infinite running npa;
+	color: #f10;
+	font-size: 1.3em;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
 }
 
 @media (min-width: 425px) {

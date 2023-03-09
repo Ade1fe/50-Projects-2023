@@ -191,4 +191,13 @@ main {
         text-align: left;
         margin: 5px;
     }
+    .title {
+    animation: 3s linear 0s normal none infinite running npa;
+    color: #f10;
+    font-size: 1.2em;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 }
