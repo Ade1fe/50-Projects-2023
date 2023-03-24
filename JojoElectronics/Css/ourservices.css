@@ -1,0 +1,57 @@
+.heading {
+    color: #007bff;
+    margin: 20px auto;
+    padding-bottom: 0px;
+}
+.our-service{
+    margin-bottom: 2rem;
+}
+
+.our-service .heading:after {
+    content: " ";
+    height: 3px;
+    width: 15%;
+    background-color: #000;
+    display: block;
+    margin: 10px auto;
+}
+
+.our-service .article {
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.our-service .article h3, .our-service .article p{
+    margin-bottom: 0.5rem;
+}
+
+.our-service .article .icon {
+    color: 007bff;
+    border: 1px solid #007bff;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    border-radius: 50%;
+    transition: all 0.4s ease-in-out;
+    margin-bottom: 1rem;
+
+}
+
+.our-service .article .icon:hover {
+    background-color: 007bff;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.our-service .article h3:hover+p {
+    color: #A577A1;
+    
+}
+
+@media (max-width:700px) {
+    
+
+    
+}

@@ -5,7 +5,7 @@ function getApi(id){
   // Replace "electronics" with the search term you want to use
   const searchTerm = id;
 
-  fetch(`https://api.unsplash.com/search/photos?query=${searchTerm}&client_id=${ACCESS_KEY}&per_page=20&w=360`)
+  fetch(`https://api.unsplash.com/search/photos?query=${searchTerm}&client_id=${ACCESS_KEY}&per_page=0&w=360`)
     .then(response => response.json())
     .then(data => {
       // Loop through the results and create a card for each image
@@ -153,11 +153,11 @@ getApi("Phones");
     },
     // when window width is < 576px
     0: {
-      slidesPerView: 1.25,
+      slidesPerView: 1.35,
       grid: {
         rows: 2,
       },
-      spaceBetween: 10,
+      spaceBetween: 5,
     },
   },
 });

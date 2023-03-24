@@ -123,7 +123,7 @@ function getApi(id){
   // Replace "electronics" with the search term you want to use
   const searchTerm = id;
 
-  fetch(`https://api.unsplash.com/search/photos?query=${searchTerm}&client_id=${ACCESS_KEY}&per_page=30&w=360`)
+  fetch(`https://api.unsplash.com/search/photos?query=${searchTerm}&client_id=${ACCESS_KEY}&per_page=20&w=360`)
     .then(response => response.json())
     .then(data => {
       // Loop through the results and create a card for each image
@@ -164,6 +164,44 @@ function displayImages() {
   fetch(`https://api.unsplash.com/search/photos?query=${searchTerm}&client_id=${ACCESS_KEY}&per_page=6&w=360`)
     .then(response => response.json())
     .then(data => {
+
+      function addToCartHandler(event) {
+  event.preventDefault();
+  
+  let quantity;
+  
+  do {
+    quantity = prompt('How many items do you want to buy?');
+  } while (!Number.isInteger(parseInt(quantity)) || parseInt(quantity) <= 0);
+
+  const productCard = event.target.closest('.cardo');
+  const product = {
+    id: productCard.dataset.productId,
+    name: productCard.querySelector('.tits').textContent,
+    price: productCard.dataset.price,
+    image: productCard.querySelector('img').src,
+    quantity: parseInt(quantity) // convert quantity to a number
+  };
+  
+  // retrieve cart from local storage
+  let cart = JSON.parse(localStorage.getItem('cart')) || { items: [] };
+  
+  // check if the product is already in the cart
+  const index = cart.items.findIndex(item => item.id === product.id);
+  if (index === -1) {
+    // product not in cart, add it
+    cart.items.push(product);
+  } else {
+    // product already in cart, update quantity
+    cart.items[index].quantity += product.quantity;
+  }
+  
+  // save updated cart to local storage
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // redirect to cart.html
+  window.location.href = './Pages/cart.html';
+}
       // Loop through the results and create a card for each image
       const container = document.querySelector('.swiper-wrapper');
       container.innerHTML = ''; // clear the previous content
@@ -179,11 +217,11 @@ function displayImages() {
               <p class="sec"></p>
             </div>
             <div class="cardImgo">
-              <img src="${result.urls.regular}" alt="">
+              <img src="${result.urls.regular}" data-price="10.00" alt="">
             </div>
             <div class="cardtext">
-              <p>${result.alt_description}</p>
-              <p>add to cart</p>
+              <p class="tits">${result.alt_description}</p>
+             <p class="add-to-cart"><i class="bi bi-cart-check-fill"></i></p>
               <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>  <i class="bi bi-star-half"></i>
             </div>
           </div>
@@ -192,6 +230,11 @@ function displayImages() {
         card.innerHTML = cardContent;
         container.appendChild(card);
 
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+// when the user clicks on the addToCartButtons it should prompt them for how many items they want to buy
+addToCartButtons.forEach(button => {
+button.addEventListener('click', addToCartHandler);
+});
         // Countdown timer
         const hours = card.querySelector('.hours');
         const minutes = card.querySelector('.mins');
@@ -225,7 +268,7 @@ function displayImages() {
   // window.addEventListener('load', displayImages);
   $( document ).ready(function() { 
     const all = document.getElementById("gadgets")
-     getApi(all);
+    //  getApi(all);
      displayImages();
     // countdownTimeStart();
 });
@@ -332,3 +375,21 @@ $(document).ready(function(){
         }]
     });
 });
+
+
+
+
+// coming soon..
+document.querySelectorAll('.mm p:first-of-type').forEach((node) => {
+  node.addEventListener("click", () => {
+    alert('coming soon');
+  });
+});
+
+
+
+
+// shop
+document.querySelector("#shopAll").addEventListener("click", ()=>{
+  
+})

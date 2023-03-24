@@ -394,7 +394,9 @@ figure figcaption button {
 figure figcaption button a{
     color: var(--white);
 }
-
+.bi-star-fill, .bi-star-half{
+    color: orange;
+}
 
 
 /*  */
@@ -421,9 +423,17 @@ figure figcaption button a{
  }
  .swiper {
      width: 100%;
-     height: max-content;
+     height: min-content;
+     /* height: 90%; */
      /* height: 70%; */
     /* background: #ccc; */
+ }
+  .swiper-wrapper{
+    height: 101%;
+  }
+ .swiper-button-prev,
+ .swiper-button-next{
+    display: none !important;
  }
 
  .swiper-slide {
@@ -541,7 +551,7 @@ figure figcaption button a{
     padding: 1.5rem 3rem;
 }
 .support .box .myText h4{
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .support .box i{
     font-size: 2rem;
@@ -603,13 +613,14 @@ figure figcaption button a{
 .blog{
     display: flex;
     justify-content: space-evenly;
-    gap: 20px 30px;
+    gap: 20px 10px;
     align-items: center;
     flex-wrap: wrap;
     padding: 0 1.5rem;
+    margin-bottom: 4rem;
 }
 .cardBlog{
-    width: 370px;
+    width: 290px;
     border: 2px solid red;
     border: 1px solid #eee;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -628,11 +639,16 @@ figure figcaption button a{
     display: flex;
     align-items: center;
     justify-content: left;
+    margin-top: 1rem;
     /* width: 90%; */
     /* margin: auto; */
 }
+
 .mm p{
     padding: 0.2rem 0;
+    font-weight: bold;
+    white-space: nowrap;
+    
 }
 .mm p:hover{
     color: #1e90ff;
@@ -1008,7 +1024,9 @@ h2 {
     margin: 2rem 0rem;
     margin-bottom: 0rem;
 }
-
+.deals h2{
+    font-size: 1.7rem;
+}
 .advert h1 {
     font-size: 2rem;
     color: #fff;
@@ -1072,6 +1090,13 @@ h2 {
 #my-dropdown-id li a i{
     box-shadow: none;
     padding: 0;
+}
+
+@media (max-width: 670px) {
+
+    .cardBlog {
+        width: 100%;
+    }
 }
 
 @media (max-width:415px) {

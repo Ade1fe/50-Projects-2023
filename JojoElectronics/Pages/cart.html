@@ -1,0 +1,104 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Css/cart.css">
+    <title>Document</title>
+  </head>
+  <body>
+
+  
+    <div class="grid">
+        <div class="things">
+      <h3>Image</h3>
+      <h3>Product Name</h3>
+      <h3>Unit Price</h3>
+      <h3>QTY</h3>
+      <h3>SubTotal</h3>
+      <h3>Action</h3>
+    </div>
+       <div id="cart-items"></div>
+    </div>
+    <div id="cart-total"></div>
+
+    <script>
+  // get the cart data from localStorage, or create an empty cart object
+  const cart = JSON.parse(localStorage.getItem("cart")) || { items: [] };
+
+  // find the HTML element where we want to display the cart items
+  const cartItemsElement = document.getElementById("cart-items");
+  const cartTotalElement = document.getElementById("cart-total");
+
+  // clear any existing content from the cart items element
+  cartItemsElement.innerHTML = "";
+  cartTotalElement.innerHTML = "";
+
+  // let totalPrice = 0;
+
+  // loop through each item in the cart and create an HTML element for it
+ cart.items.forEach((item) => {
+  // create a new div to hold the item's image, name, price, quantity, and delete button
+  const itemElement = document.createElement("div");
+  itemElement.classList.add("contain")
+
+
+
+  // create a new image element and set its source and alt attributes
+  const itemImage = document.createElement("img");
+  itemImage.src = item.image;
+  itemImage.alt = item.name;
+  itemElement.appendChild(itemImage);
+
+      const itemImageContainer = document.createElement("div");
+itemImageContainer.appendChild(itemImage);
+itemImageContainer.classList.add("item");
+itemElement.appendChild(itemImageContainer);
+
+  // create a new div to hold the item's name, quantity, and price
+  const itemInfo = document.createElement("div");
+  itemInfo.classList.add("item-info");
+
+  const itemName = document.createElement("p");
+  itemName.innerHTML = item.name;
+  itemElement.appendChild(itemName);
+
+  const itemPrice = document.createElement("p");
+  itemPrice.innerHTML = `$${Number(item.price).toFixed(2)}`;
+  itemElement.appendChild(itemPrice);
+
+    const itemQuantity = document.createElement("p");
+  itemQuantity.innerHTML = `Quantity: ${Number(item.quantity)}`;
+  itemElement.appendChild(itemQuantity);
+
+  const itemTotal = document.createElement("p");
+  itemTotal.innerHTML = `$${(Number(item.quantity) * Number(item.price)).toFixed(2)}`;
+  itemElement.appendChild(itemTotal);
+
+
+  // itemElement.appendChild(itemInfo);
+
+  // create a new button to remove the item from the cart
+  const deleteButton = document.createElement("button");
+  deleteButton.innerHTML = "Remove";
+  deleteButton.addEventListener("click", () => {
+    // remove the item from the cart's items array
+    cart.items = cart.items.filter(
+      (cartItem) => cartItem.id !== item.id
+    );
+    // save the updated cart data back to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+    // remove the item's HTML element from the page
+    itemElement.remove();
+
+  });
+  itemElement.appendChild(deleteButton); // add the delete button to the item div
+
+    cartItemsElement.appendChild(itemElement);
+
+  });
+
+
+</script>
+ </body>
+</html>
