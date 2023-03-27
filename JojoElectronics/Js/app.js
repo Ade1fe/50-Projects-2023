@@ -6,10 +6,6 @@ let dropdownIsOpen = false
 
 // Handle dropdown menues
 if (dropdowns.length) {
-  // Usually I don't recommend doing this (adding many event listeners to elements have the same handler)
-  // Instead use event delegation: https://javascript.info/event-delegation
-  // Why: https://gomakethings.com/why-event-delegation-is-a-better-way-to-listen-for-events-in-vanilla-js
-  // But since we only have two dropdowns, no problem with that. 
   dropdowns.forEach((dropdown) => {
     dropdown.addEventListener('click', (event) => {
       let target = document.querySelector(`#${event.target.dataset.dropdown}`)
@@ -116,10 +112,61 @@ tabTitles.forEach(title => {
 });
 
 
+// Define the addToCartHandler function outside of getApi
+function addToCartHandler(event) {
+  event.preventDefault();
+
+  let quantity;
+
+  do {
+    quantity = prompt('How many items do you want to buy?');
+
+  } while (!Number.isInteger(parseInt(quantity)) || parseInt(quantity) <= 0);
+
+  const productCard = event.target.closest('.image-block');
+  const productName = productCard.querySelector('h3').textContent;
+  const productImage = productCard.querySelector('img').src;
+
+  if (!productName) {
+    console.error('Product name is missing.');
+    return;
+  }
+
+ const product = {
+  id: productCard.dataset.productId,
+  name: productName,
+  image: productImage,
+  quantity: parseInt(quantity),
+  price: 10 // set a default price of 10
+};
+
+
+  // retrieve cart from local storage
+  let cart = JSON.parse(localStorage.getItem('cart')) || { items: [] };
+
+  // check if the product is already in the cart
+  const index = cart.items.findIndex(item => item.name === product.name && item.image === product.image);
+  if (index === -1) {
+    // product not in cart, add it
+    cart.items.push(product);
+  } else {
+    // product already in cart, update quantity
+    cart.items[index].quantity += product.quantity;
+  }
+
+  // save updated cart to local storage
+  localStorage.setItem('cart', JSON.stringify(cart));
+ alert(`${product.name} added to cart`);
+
+  console.log('Cart:', cart);
+  console.log('Product added:', product);
+  console.log('Local storage:', localStorage.getItem('cart'));
+
+  // redirect to cart.html
+  window.location.href = '../Pages/cart.html';
+}
 
 function getApi(id){
-  
-
   // Replace "electronics" with the search term you want to use
   const searchTerm = id;
 
@@ -142,16 +189,25 @@ function getApi(id){
                 ${result.description || 'No description available'}
               </p>
               <button>
-                <a href="${result.links.html}" target="_blank">Add to cart</a>
+                <a href="" class="add-to-cart" target="_blank">Add to cart</a>
               </button>
             </figcaption>
           </figure>
         `;
         container.insertAdjacentHTML('beforeend', card);
       });
+
+      // Select all add-to-cart buttons inside the container and add click event listener
+      const addToCartButtons = container.querySelectorAll('.add-to-cart');
+      if (addToCartButtons.length > 0) {
+        addToCartButtons.forEach(button => {
+          button.addEventListener('click', addToCartHandler);
+        });
+      }
     })
-    .catch(error => console.error(error));
-}
+    .catch(error => console.error(error))
+
+  }
 
 
 
@@ -165,29 +221,38 @@ function displayImages() {
     .then(response => response.json())
     .then(data => {
 
-      function addToCartHandler(event) {
+function addToCartHandler(event) {
   event.preventDefault();
-  
+
   let quantity;
-  
+
   do {
     quantity = prompt('How many items do you want to buy?');
+
   } while (!Number.isInteger(parseInt(quantity)) || parseInt(quantity) <= 0);
 
   const productCard = event.target.closest('.cardo');
-  const product = {
-    id: productCard.dataset.productId,
-    name: productCard.querySelector('.tits').textContent,
-    price: productCard.dataset.price,
-    image: productCard.querySelector('img').src,
-    quantity: parseInt(quantity) // convert quantity to a number
-  };
-  
+  const productName = productCard.querySelector('.tits').textContent;
+  const productImage = productCard.querySelector('img').src;
+
+  if (!productName) {
+    console.error('Product name is missing.');
+    return;
+  }
+
+ const product = {
+  id: productCard.dataset.productId,
+  name: productName,
+  image: productImage,
+  quantity: parseInt(quantity),
+  price: 10 // set a default price of 10
+};
+
   // retrieve cart from local storage
   let cart = JSON.parse(localStorage.getItem('cart')) || { items: [] };
-  
+
   // check if the product is already in the cart
-  const index = cart.items.findIndex(item => item.id === product.id);
+  const index = cart.items.findIndex(item => item.name === product.name && item.image === product.image);
   if (index === -1) {
     // product not in cart, add it
     cart.items.push(product);
@@ -195,71 +260,81 @@ function displayImages() {
     // product already in cart, update quantity
     cart.items[index].quantity += product.quantity;
   }
-  
+
   // save updated cart to local storage
   localStorage.setItem('cart', JSON.stringify(cart));
+ alert(`${product.name} added to cart`);
+
+  console.log('Cart:', cart);
+  console.log('Product added:', product);
+  console.log('Local storage:', localStorage.getItem('cart'));
 
   // redirect to cart.html
-  window.location.href = './Pages/cart.html';
+  window.location.href = '../Pages/cart.html';
 }
+
+
       // Loop through the results and create a card for each image
-      const container = document.querySelector('.swiper-wrapper');
-      container.innerHTML = ''; // clear the previous content
-      data.results.forEach(result => {
-        const card = document.createElement('div');
-        card.classList.add('swiper-slide');
+     const container = document.querySelector('.swiper-wrapper');
+  container.innerHTML = ''; // clear the previous content
 
-        const cardContent = `
-          <div class="cardo">
-            <div class="hrs">
-              <p class="hours"></p>
-              <p class="mins"></p>
-              <p class="sec"></p>
-            </div>
-            <div class="cardImgo">
-              <img src="${result.urls.regular}" data-price="10.00" alt="">
-            </div>
-            <div class="cardtext">
-              <p class="tits">${result.alt_description}</p>
-             <p class="add-to-cart"><i class="bi bi-cart-check-fill"></i></p>
-              <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>  <i class="bi bi-star-half"></i>
-            </div>
-          </div>
-        `;
+  data.results.forEach(result => {
+    const card = document.createElement('div');
+    card.classList.add('swiper-slide');
 
-        card.innerHTML = cardContent;
-        container.appendChild(card);
+    const cardHTML = `
+      <div class="cardo">
+        <div class="hrs">
+          <p class="hours"></p>
+          <p class="mins"></p>
+          <p class="sec"></p>
+        </div>
+        <div class="cardImgo">
+          <img src="${result.urls.regular}"  alt="">
+        </div>
+        <div class="cardtext">
+          <p class="tits">${result.alt_description}</p>
+          <p class="add-to-cart"><i class="bi bi-cart-check-fill"></i></p>
+          <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i>  <i class="bi bi-star-half"></i>
+        </div>
+      </div>
+    `;
 
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
-// when the user clicks on the addToCartButtons it should prompt them for how many items they want to buy
-addToCartButtons.forEach(button => {
-button.addEventListener('click', addToCartHandler);
-});
-        // Countdown timer
-        const hours = card.querySelector('.hours');
-        const minutes = card.querySelector('.mins');
-        const seconds = card.querySelector('.sec');
+    card.innerHTML = cardHTML;
+    container.appendChild(card);
 
-        const countDownDate = new Date().getTime() + 1000 * 60 * 60 * 24; // Set the countdown to 24 hours from now
+    const addToCartButtons = card.querySelectorAll('.add-to-cart');
+    if (addToCartButtons.length > 0) {
+      addToCartButtons.forEach(button => {
+        button.addEventListener('click', addToCartHandler);
+      });
+    }
 
-        const updateTimer = setInterval(() => {
-          const now = new Date().getTime();
-          const distance = countDownDate - now;
-          const hoursLeft = Math.floor(distance / (1000 * 60 * 60));
-          const minutesLeft = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const secondsLeft = Math.floor((distance % (1000 * 60)) / 1000);
+    // Countdown timer
+    const hours = card.querySelector('.hours');
+    const minutes = card.querySelector('.mins');
+    const seconds = card.querySelector('.sec');
 
-          hours.innerText = hoursLeft < 10 ? `0${hoursLeft}` : hoursLeft;
-          minutes.innerText = minutesLeft < 10 ? `0${minutesLeft}` : minutesLeft;
-          seconds.innerText = secondsLeft < 10 ? `0${secondsLeft}` : secondsLeft;
+    const countDownDate = new Date().getTime() + 1000 * 60 * 60 * 24; // Set the countdown to 24 hours from now
 
-          if (distance < 0) {
-            clearInterval(updateTimer);
-            hours.innerText = '00';
-            minutes.innerText = '00';
-            seconds.innerText = '00';
-          }
-        }, 1000);
+    const updateTimer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      const hoursLeft = Math.floor(distance / (1000 * 60 * 60));
+      const minutesLeft = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const secondsLeft = Math.floor((distance % (1000 * 60)) / 1000);
+
+      hours.textContent = hoursLeft < 10 ? '0' + hoursLeft : hoursLeft;
+      minutes.textContent = minutesLeft < 10 ? '0' + minutesLeft : minutesLeft;
+      seconds.textContent = secondsLeft < 10 ? '0' + secondsLeft : secondsLeft;
+
+      if (distance < 0) {
+        clearInterval(updateTimer);
+        hours.textContent = '00';
+        minutes.textContent = '00';
+        seconds.textContent = '00';
+      }
+    }, 1000);
       });
     });
 }
@@ -268,7 +343,7 @@ button.addEventListener('click', addToCartHandler);
   // window.addEventListener('load', displayImages);
   $( document ).ready(function() { 
     const all = document.getElementById("gadgets")
-    //  getApi(all);
+     getApi(all);
      displayImages();
     // countdownTimeStart();
 });
@@ -347,7 +422,7 @@ var mySwiper = new Swiper('.mySwiper', {
 
 
 
-
+// localStorage.clear();
 
 
 
@@ -386,6 +461,14 @@ document.querySelectorAll('.mm p:first-of-type').forEach((node) => {
   });
 });
 
+const elements = document.querySelectorAll('.come');
+elements.forEach(element => {
+  element.addEventListener('click', function() {
+     alert('coming soon');
+  });
+});
+
+
 
 
 
@@ -393,3 +476,56 @@ document.querySelectorAll('.mm p:first-of-type').forEach((node) => {
 document.querySelector("#shopAll").addEventListener("click", ()=>{
   
 })
+
+
+// 
+const dropdown = document.getElementById('my-dropdown-id');
+
+dropdown.querySelectorAll('li').forEach((li) => {
+  const text = li.textContent.trim();
+  switch (text) {
+    case 'Headphone':
+      li.addEventListener('click', () => {
+        window.location.href = '../single.html?id=headphone';
+      });
+      break;
+    case 'Video Game':
+      li.addEventListener('click', () => {
+        window.location.href = '../single.html?id=video-game';
+      });
+      break;
+    case 'Portable Speaker':
+      li.addEventListener('click', () => {
+        window.location.href = '../single.html?id=portable-speaker';
+      });
+      break;
+    case 'Digital Camera':
+      li.addEventListener('click', () => {
+        window.location.href = '../single.html?id=digital-camera';
+      });
+      break;
+    case 'Gadget':
+      li.addEventListener('click', () => {
+        window.location.href = '../single.html?id=gadget';
+      });
+      break;
+    case 'Home Appliance':
+      li.addEventListener('click', () => {
+        window.location.href = '../single.html?id=home-appliance';
+      });
+      break;
+    case 'Audio Record':
+      li.addEventListener('click', () => {
+        window.location.href = '../single.html?id=audio-record';
+      });
+      break;
+    case 'Computer/Laptop':
+      li.addEventListener('click', () => {
+        window.location.href = '../single.html?id=laptop';
+      });
+      break;
+    default:
+      break;
+  }
+});
+

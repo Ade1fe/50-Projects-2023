@@ -1,8 +1,17 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+* {
     margin: 0;
-    padding: 0;
+    padding: 0%;
+    /* background-color: #afa9a9; */
 }
 
+body {
+    font-family: 'EB Garamond', serif !important;
+}
+span{
+    color: #007bff;
+}
 .about {
     padding: 2rem 0;
 }

@@ -4,25 +4,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../Css/cart.css">
+    <link rel="stylesheet" href="../Css/nav.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>Document</title>
   </head>
   <body>
 
-  
-    <div class="grid">
-        <div class="things">
-      <h3>Image</h3>
-      <h3>Product Name</h3>
-      <h3>Unit Price</h3>
-      <h3>QTY</h3>
-      <h3>SubTotal</h3>
-      <h3>Action</h3>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary overlay-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold fs-4" href="#">Jojo's <span>Electronics</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../Pages/home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Pages/shopAll.html">Shop</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link active" href="./cart.html">Cart</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="./ourservices.html">Our Services</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="./contact.html">Contact Us</a>
+        </li>
+        <li class="nav-item me-5">
+          <a class="nav-link" aria-current="page" href="./About.html">About Us</a>
+        </li>
+       
+      </ul>
     </div>
+  </div>
+</nav>
+  
        <div id="cart-items"></div>
     </div>
     <div id="cart-total"></div>
 
     <script>
+      
   // get the cart data from localStorage, or create an empty cart object
   const cart = JSON.parse(localStorage.getItem("cart")) || { items: [] };
 
@@ -95,10 +121,14 @@ itemElement.appendChild(itemImageContainer);
   itemElement.appendChild(deleteButton); // add the delete button to the item div
 
     cartItemsElement.appendChild(itemElement);
+    console.log(cart)
 
   });
 
 
 </script>
+
+<script src="../Js/random.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
  </body>
 </html>

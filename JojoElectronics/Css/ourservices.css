@@ -1,3 +1,17 @@
+
+* {
+    margin: 0;
+    padding: 0%;
+    /* background-color: #afa9a9; */
+}
+
+body {
+    font-family: 'EB Garamond', serif !important;
+}
+
+span {
+    color: #007bff;
+}
 .heading {
     color: #007bff;
     margin: 20px auto;

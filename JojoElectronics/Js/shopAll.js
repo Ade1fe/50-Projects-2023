@@ -5,7 +5,7 @@ function getApi(id){
   // Replace "electronics" with the search term you want to use
   const searchTerm = id;
 
-  fetch(`https://api.unsplash.com/search/photos?query=${searchTerm}&client_id=${ACCESS_KEY}&per_page=0&w=360`)
+  fetch(`https://api.unsplash.com/search/photos?query=${searchTerm}&client_id=${ACCESS_KEY}&per_page=20&w=360`)
     .then(response => response.json())
     .then(data => {
       // Loop through the results and create a card for each image
@@ -121,7 +121,7 @@ getApi("Phones");
   breakpoints: {
     // when window width is >= 1200px
     1200: {
-      slidesPerView: 4,
+      slidesPerView: 4.15,
       grid: {
         rows: 2,
       },
@@ -129,7 +129,7 @@ getApi("Phones");
     },
     // when window width is >= 992px
     992: {
-      slidesPerView: 3,
+      slidesPerView: 3.13,
       grid: {
         rows: 2,
       },
@@ -137,7 +137,7 @@ getApi("Phones");
     },
     // when window width is >= 768px
     768: {
-      slidesPerView: 3,
+      slidesPerView: 3.12,
       grid: {
         rows: 2,
       },

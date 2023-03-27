@@ -55,10 +55,10 @@ a{
 .footer-logo {
     margin-bottom: 30px;
 }
-.footer-logo h2{
+.footer-logo h2, .footer-logo h4{
     color: #fff;
 }
-.footer-logo h2 span{
+.footer-logo h2 span, .footer-logo h4 span{
     color: #007bff;
 }
 

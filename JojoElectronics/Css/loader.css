@@ -1,207 +1,78 @@
-@import url("https://fonts.googleapis.com/css?family=Oxygen:700&display=swap");
 body {
-    margin: 0;
-}
-
-.content {
-    width: 100%;
-    height: 100vh;
-    background-color: #fff;
+    padding: 1em;
+    background: #fff;
+    color: #777;
+    text-align: center;
+    font-family: "Gill sans", sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
-.content .loading {
-    width: 80px;
-    height: 50px;
-    position: relative;
-}
-
-.content .loading p {
-    top: 0;
-    padding: 0;
+* {
     margin: 0;
-    color: #5389a6;
-    font-family: "Oxygen", sans-serif;
-    animation: text 3.5s ease both infinite;
-    font-size: 12px;
-    letter-spacing: 1px;
+    padding: 0%;
+    /* background-color: #afa9a9; */
 }
 
-@keyframes text {
-    0% {
-        letter-spacing: 1px;
-        transform: translateX(0px);
-    }
-
-    40% {
-        letter-spacing: 2px;
-        transform: translateX(26px);
-    }
-
-    80% {
-        letter-spacing: 1px;
-        transform: translateX(32px);
-    }
-
-    90% {
-        letter-spacing: 2px;
-        transform: translateX(0px);
-    }
-
-    100% {
-        letter-spacing: 1px;
-        transform: translateX(0px);
-    }
+body {
+    font-family: 'EB Garamond', serif !important;
 }
 
-.content .loading span {
-    background-color: #5389a6;
-    border-radius: 50px;
-    display: block;
-    height: 16px;
-    width: 16px;
-    bottom: 0;
-    position: absolute;
-    transform: translateX(64px);
-    animation: loading 3.5s ease both infinite;
-}
-
-.content .loading span:before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: #a6dcee;
-    border-radius: inherit;
-    animation: loading2 3.5s ease both infinite;
-}
-
-@keyframes loading {
-    0% {
-        width: 16px;
-        transform: translateX(0px);
-    }
-
-    40% {
-        width: 100%;
-        transform: translateX(0px);
-    }
-
-    80% {
-        width: 16px;
-        transform: translateX(64px);
-    }
-
-    90% {
-        width: 100%;
-        transform: translateX(0px);
-    }
-
-    100% {
-        width: 16px;
-        transform: translateX(0px);
-    }
-}
-
-@keyframes loading2 {
-    0% {
-        transform: translateX(0px);
-        width: 16px;
-    }
-
-    40% {
-        transform: translateX(0%);
-        width: 80%;
-    }
-
-    80% {
-        width: 100%;
-        transform: translateX(0px);
-    }
-
-    90% {
-        width: 80%;
-        transform: translateX(15px);
-    }
-
-    100% {
-        transform: translateX(0px);
-        width: 16px;
-    }
+span {
+    color: #007bff;
 }
 
 
-.ok{
-    position: absolute;
-    top: 53%;
-    left: 10%;
-    padding: 1rem;
-    color: #000;
-    /* border: 2px solid red; */
-    width: 80%;
-    overflow: hidden;
+p {
+    font-style: italic;
 }
 
-
-/*  */
-.box-esterno {
-    position: relative;
-    overflow: hidden;
-    margin: auto;
-    float: none;
-    background: #fff;
-    height: 400px;
-    width:500px;
+.loader {
+    width: 30%;
     text-align: center;
 }
 
-.testo-scroll {
-    text-align: justify;
-    padding: 0 24px;
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    font-size: 1.1rem;
-    margin: 0 auto;
-    background-color: #fff;
-    transform: translateY(100%);
-    animation: testo-scroll 12s linear 1s infinite normal none running;
+/*
+  Set the color of the icon
+*/
+svg path,
+svg rect {
+    fill: #0062cc;
+}
+.notice{
+    background-color: #367ccd;
+    padding: 1em;
+    width: 80%;
+    margin: 0;
+    color: #fff;
 }
 
-@keyframes testo-scroll {
+.marquee {
+    width: 100%;
+    padding-top: 1rem;
+    overflow: hidden;
+}
+.marquee-content p{
+    padding: 0.5rem;
+
+}
+.marquee-content {
+    animation: slide-up 10s linear infinite;
+}
+
+.marquee-content p {
+    margin: 0;
+}
+
+@keyframes slide-up {
     0% {
-        transform: translateY(100%);
+        transform: translateY(0);
     }
 
     100% {
         transform: translateY(-100%);
-    }
-}
-
-.box-esterno h2 {
-    position: absolute;
-    top: -25px;
-    padding-top: 20px;
-    z-index: 1;
-    width: 100%;
-    height: 60px;
-    font-size: 30px;
-    background-color: lightgray;
-    color: red;
-}
-
-
-
-@media (max-width:500px) {
-    .ok{
-    position: absolute;
-    top: 53%;
-    left: 7%;
-
-    }
-    .box-esterno h2 {
-        left: -10%;
     }
 }

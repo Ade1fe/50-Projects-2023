@@ -9,7 +9,7 @@
     --black: #000;
 }
 body{
-font-family: 'EB Garamond', serif;
+font-family: 'EB Garamond', serif !important;
 }
 
 /* headerOne */
@@ -266,19 +266,18 @@ gap: 20px 0;
 }
 
 .tab-link {
-    font-size: 14px;
+    font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
     position: relative;
     /* width: 100%; */
     margin: 0;
 }
-
-.tab-link.active-link::after {
+.tab-link.active::after {
     content: '';
     width: 50%;
     height: 3px;
-    background-color: red;
+    background-color: #1e90ff;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -366,7 +365,14 @@ figure figcaption {
     line-height: 1;
     transition: 0.25s;
 }
-
+.bi-cart-check-fill{
+    color: #1e90ff;
+    cursor: pointer;
+    font-size: 2.1rem;
+}
+.bi-cart-check-fill:hover{
+    color: #bbb;
+}
 figure figcaption h3 {
     margin: 0 0 20px;
     padding: 0;
