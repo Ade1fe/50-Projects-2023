@@ -41,3 +41,11 @@
     padding: 0.3rem;
     border-radius: 30px;
 }
+
+
+@media (max-width:550px) {
+    .faq ul li {
+        font-size: 15px;
+
+    }
+}

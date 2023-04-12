@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 
-main {
+section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -25,6 +25,7 @@ main {
 }
 #title {
 	font-size: 16px;
+	padding: 0 0.5rem;
 }
 
 img {
@@ -63,26 +64,39 @@ img {
 }
 
 #genres {
+	
+	/* border: blue 2px solid; */
 	display: flex;
 	justify-content: center;
-	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;
 	align-items: center;
-	gap: 20px;
+	flex-wrap: wrap;
+	gap: 10px 20px;
+
 }
 
 .listitems {
 	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* border: #f10 2px solid; */
+	margin: 0; padding: 0;
 }
 .listitems li {
 	background: khaki;
 	padding: 10px;
 	border-radius: 10px;
+	text-align: center;
 }
 
 @media (min-width: 768px) {
 	.container {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
+		justify-content: center;
+		align-items: center;
 	}
 
 	#image {

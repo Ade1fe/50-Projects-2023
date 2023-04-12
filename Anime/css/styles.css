@@ -769,6 +769,14 @@ footer ul li a:hover{
 	padding: 2rem 1rem;
 	padding-bottom: 1rem;
 }
+.flexmi{
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	align-items: flex-start !important;
+
+}
 /* Carousel */
 
 /* end */
