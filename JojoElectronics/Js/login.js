@@ -55,7 +55,7 @@ if (!usernameRegex.test(username)) {
 
 
   // Check that password contains both letters and numbers and is no longer than 8 characters
-  const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{1,8}$/;
+  const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{1,9}$/;
   if (!passwordRegex.test(password)) {
     alert('Password must contain at least one letter and one number, and be no longer than 8 characters');
     return;

@@ -177,6 +177,7 @@ function getApi(id){
       const container = document.querySelector('#allContainer');
       container.innerHTML = ''; // clear the previous content
       data.results.forEach(result => {
+       
         const card = `
           <figure class="image-block">
             <h3>${result.alt_description}</h3>
@@ -185,9 +186,13 @@ function getApi(id){
               <h3>
 		          	More Info
 		          </h3>
-              <p>
-                ${result.description || 'No description available'}
-              </p>
+             ${
+          result.description && result.description.length < 15
+            ? `<p>${result.description}</p>`
+            : result.description
+              ? `<p>${result.description.slice(0, 15)}...</p>`
+              : `<p>No description available</p>`
+        }
               <button>
                 <a href="" class="add-to-cart" target="_blank">Add to cart</a>
               </button>
