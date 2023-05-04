@@ -46,7 +46,7 @@ header ul {
     background-color: var(--white);
 }
 
-.bx-menu-alt-right {
+.bx .bx-menu-alt-right {
     display: none;
 }
 .cancel-icon {
@@ -100,9 +100,7 @@ header ul li a:hover {
         z-index: 99999999999;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     }
-    .menu-icon {
-    display: block;
-    }
+   
     header ul li {
         margin: 20px 0;
         text-align: center;
