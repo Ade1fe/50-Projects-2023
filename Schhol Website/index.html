@@ -31,16 +31,27 @@
             <li><a href="">About</a></li>
             <li><a href="">Contact Us</a></li>
         </ul>
- <i class='bx bx-menu-alt-right'></i>
+ <!-- <i class='bx bx-menu-alt-right'></i> -->
+ <i href="#" class="bx bx-menu-alt-right menu-icon"></i>
+  <i href="#" class="bx bx-x cancel-icon"></i>
     </header>
     
 
     <script>
-        const menuIcon = document.querySelector(".bx-menu-alt-right");
+const menuIcon = document.querySelector(".menu-icon");
+const cancelIcon = document.querySelector(".cancel-icon");
 const menuItems = document.querySelector("header ul");
 
 menuIcon.addEventListener("click", () => {
-  menuItems.classList.toggle("show");
+  menuItems.classList.add("show");
+  menuIcon.style.display = "none";
+  cancelIcon.style.display = "block";
+});
+
+cancelIcon.addEventListener("click", () => {
+  menuItems.classList.remove("show");
+  menuIcon.style.display = "block";
+  cancelIcon.style.display = "none";
 });
 
     </script>
