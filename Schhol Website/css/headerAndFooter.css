@@ -109,12 +109,15 @@ header ul li a:hover {
         position: absolute;
         right: 20px;
         font-size: 2rem;
+        cursor: pointer;
     }
-      .bx-x {
+      .bxl-xing {
     display: none;
     position: absolute;
     top: 10px;
     right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
   }
     header div h2 {
     position: absolute;
