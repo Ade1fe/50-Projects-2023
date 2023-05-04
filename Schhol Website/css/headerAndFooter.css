@@ -1,3 +1,13 @@
+
+:root{
+    --main-color: #023e8a;
+    --black: #000;
+    --white: #fff;
+    --hover-color: #0096c7;
+    --footer-black: #0d1b2a;
+}
+
+
 header {
     border: 2px solid red;
     display: flex;
