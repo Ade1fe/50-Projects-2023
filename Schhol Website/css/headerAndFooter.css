@@ -70,6 +70,26 @@ header ul li a:hover {
 .cancel-icon, .menu-icon {
     display: none;
 }
+/* header ends */
+
+
+/* maijn */
+main{
+    border: 2px solid red;
+    height: 100%;
+    margin-top: 5rem;
+    
+}
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 900px) {
     header {
