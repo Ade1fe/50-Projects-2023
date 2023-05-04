@@ -46,12 +46,6 @@ header ul {
     background-color: var(--white);
 }
 
-.bx .bx-menu-alt-right {
-    display: none;
-}
-.cancel-icon {
-    display: none;
-}
 
 header ul li {
     margin: 0 20px;
@@ -71,6 +65,10 @@ header ul li a:hover {
     color: var(--white);
     cursor: pointer;
    
+}
+
+.cancel-icon, .menu-icon {
+    display: none;
 }
 
 @media (max-width: 900px) {
