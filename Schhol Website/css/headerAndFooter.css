@@ -1,4 +1,9 @@
 
+
+body {
+   font-family: "Sofia", sans-serif;
+}
+
 :root{
     --main-color: #023e8a;
     --black: #000;
@@ -38,15 +43,17 @@ header ul {
 
 header ul li {
     margin: 0 20px;
-    padding: 0.5rem 0.3rem;
+   
     transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
 }
 header ul li a{
     text-decoration: none;
+    padding: 0.5rem 0.3rem;
 }
-header ul li:hover {
-    background-color: #ccc;
+header ul li a:hover {
+    background-color: var(--hover-color);
     border-radius: 50%;
+    color: var(--white);
     cursor: pointer;
    
 }
