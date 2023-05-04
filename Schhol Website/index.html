@@ -3,11 +3,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- boxIcon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- customs css -->
     <link rel="stylesheet" href="/css/styles1.css">
+    <link rel="stylesheet" href="/css/headerAndFooter.css">
     <title>Document</title>
 </head>
 <body>
+
+    <header>
+        <div>
+            <h2>Logo</h2>
+        </div>
+
+      
+
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Teacher</a></li>
+            <li> <a href="">Class</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+ <i class='bx bx-menu-alt-right'></i>
+    </header>
     
+
+    <script>
+        const menuIcon = document.querySelector(".bx-menu-alt-right");
+const menuItems = document.querySelector("header ul");
+
+menuIcon.addEventListener("click", () => {
+  menuItems.classList.toggle("show");
+});
+
+    </script>
 
 
 
