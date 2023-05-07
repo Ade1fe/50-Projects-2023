@@ -1,0 +1,197 @@
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    /* border: 2px solid green; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+}
+
+
+
+:root {
+    --main-color: #f77f00;
+    --black: #000;
+    --white: #fff;
+    --hover-color: #dd730f;
+    --footer-black: #0d1b2a;
+    /* font-size: 14px; */
+    --font-family-small: 14px;
+    /* --normal-font-family : Verdana, Geneva, Tahoma, sans-serif; */
+    --special-font-family: "Sofia", sans-serif;
+--color-aqua: rgba(0, 255, 255, 0.5);
+    /* half-transparent aqua */
+    --color-yellow: rgba(255, 255, 0, 0.5);
+    /* half-transparent yellow */
+    --color-purple: rgba(128, 0, 128, 0.5);
+    /* half-transparent purple */
+    --color-orange: rgba(255, 165, 0, 0.5);
+  --color-white: white;
+}
+
+
+/* ---------       ------------------- */
+
+
+
+.main- {
+    background-color: var(--white);
+    color: var(--black);
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    border: 2px solid green;
+    padding: 1rem;
+}
+.one{
+    width:50%;
+    border: 2px solid yellow;
+}
+.one p{
+    line-height: 2rem;
+}
+.one h1{
+    margin: 5px 0;
+}
+.one li{
+    line-height: 2rem;
+}
+.two{
+    width: 600px;
+    max-width: 100%;
+    height: 500px;
+}
+.two img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.one ol {
+    counter-reset: li;
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 10px;
+}
+.one li{
+    margin: 5px 0;
+}
+
+.one li::before {
+    counter-increment: li;
+    content: counter(li);
+    margin-right: 20px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: var(--main-color);
+}
+
+/* -------------- */
+.third {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 3rem 1rem;
+    /* height: 300px; */
+   /* margin-bottom: 5rem; */
+}
+
+.third p {
+    height: 200px;
+    text-align: center;
+    flex-basis: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.third p:first-child {
+    background-color: var(--color-aqua);
+    color: var(--color-white);
+}
+
+.third p:nth-child(2) {
+    background-color: var(--color-yellow);
+    color: var(--color-white);
+}
+
+.third p:nth-child(3) {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+}
+
+.third p:nth-child(4) {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+
+.third p span {
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+@media (max-width:830px) {
+    .main-{
+        display: block;
+    }
+    .one, .two{
+        width: 100%;
+    }
+}
+
+
+@media (max-width:768px) {
+    .two{
+    height: 300px;
+    border: 2px solid red;
+}
+.one li::before{
+    margin-right: 10px;
+}
+}
+
+
+
+/* On screens smaller than 600px */
+@media screen and (max-width: 788px) {
+    .third {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    /* padding: 1rem; */
+}
+  
+}
+
+@media (max-width:500px) {
+      .third {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+
+
+
