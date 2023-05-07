@@ -110,6 +110,31 @@ header ul li a:hover {
     
 } */
 
+
+
+
+/* first contain */
+.first-con {
+    text-align: center;
+    /* border: 2px solid green; */
+    height: 250px;
+    color: var(--main-color);
+}
+
+.first-con a,
+.first-con h1 {
+    color: var(--white);
+    font-weight: bolder;
+    text-decoration: none;
+
+}
+
+.first-con a:nth-child(3) {
+    color: var(--main-color);
+}
+
+
+
 /* main-styles */
 .main-image {
     position: fixed;
@@ -291,7 +316,7 @@ footer{
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     padding-top: 0.7rem;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 #scroll-to-top:hover {

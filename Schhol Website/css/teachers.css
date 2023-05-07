@@ -28,21 +28,7 @@ body {
 }
 
 
-.first-con{
-    text-align: center;
-    /* border: 2px solid green; */
-    height: 250px;
-    color: var(--main-color);
-}
-.first-con a, .first-con h1{
-    color: var(--white);
-    font-weight: bolder;
-    text-decoration: none;
-   
-}
-.first-con a:nth-child(3){
-    color: var(--main-color);
-}
+
 
 
 /* ------------   ----------------- */
