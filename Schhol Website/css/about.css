@@ -146,6 +146,314 @@ body {
 
 
 
+/* ----- */
+.containers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 4rem 2rem;
+    background-color: var(--white);
+    color: var(--black);
+    align-items: last baseline;
+}
+.box- h2{
+    margin: 10px 0;
+}
+.box- p{
+    line-height: 1.5rem;
+}
+.box-  button{
+    padding: 1rem;
+    background-color: var(--main-color);
+    font-size: 1.1rem;
+    color: var(--white);
+    border: none;
+    margin: 0;
+    margin-top: 5px;
+    border-radius: 7px;
+}
+.box- span{
+    color: var(--main-color);
+}
+
+.box {
+   
+    /* padding: 20px; */
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    /* add position:relative to enable absolute positioning of .content */
+}
+
+.box:hover .content {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* show .content when hovering over .box */
+}
+
+.box-img img {
+    width: 100%;
+    height: auto;
+    /* border-radius: 50%; */
+}
+
+.content {
+      visibility: hidden;
+    /* hide .content by default */
+    position: absolute;
+    /* position .content relative to .box */
+    top: 50%;
+    /* center .content vertically */
+    left: 50%;
+    /* center .content horizontally */
+    transform: translate(-50%, -50%);
+    /* center .content */
+}
+
+.content h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: var(--white);
+}
+
+.content h4 {
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.content-info {
+    margin-top: 20px;
+}
+
+.content-info i {
+    font-size: 24px;
+    margin-right: 10px;
+    background-color: var(--white);
+    color: var(--main-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.contan{
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+}
+
+.form{
+    background-color: var(--white);
+    margin-left: auto;
+    color: var(--black);
+    padding: 3rem 1rem !important;
+}
+.form button{
+    margin: 0;
+}
+.form span{
+    color: var(--main-color);
+}
+
+
+
+/* ---------------- */
+.myTable {
+    background-color: var(--white);
+    padding: 3rem 0;
+    color: var(--black);
+    overflow-x: auto;
+}
+
+.myTable h3 {
+    padding: 0.3rem;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 0;
+}
+
+.myInfo {
+    color: var(--black);
+    margin: 1rem 0;
+    text-align: center;
+    padding: 0.3rem;
+}
+
+.myInfo span {
+    color: var(--main-color);
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+    background-color: var(--white);
+    color: var(--black);
+    margin: auto;
+}
+
+th {
+    font-size: 1.3rem;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 2rem 1rem;
+}
+
+
+
+/* -------- */
+
+.notify {
+    background-color: #f0f0f0;
+    color: var(--black);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.first h3 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.second {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 0.5rem 0;
+    margin: auto;
+    /* margin-top: 1rem; */
+    background-color: var(--white);
+}
+
+.second input[type="text"] {
+    width: calc(100% - 200px);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    position: relative;
+}
+
+.second button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1rem;
+    margin-left: -10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    width: 200px;
+}
+
+button:hover {
+    background-color: #0062cc;
+}
+
+
+@media (max-width: 550px) {
+   .second{
+    flex-direction: column;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .containers {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+      table {
+        font-size: 0.8rem;
+    }
+
+    th,
+    td {
+        padding: 1rem 0.5rem;
+    }
+
+    .myTable {
+        padding: 1.5rem 0;
+    }
+
+    .myTable h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:500px) {
+    .containers {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    table{
+        width: 97%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
