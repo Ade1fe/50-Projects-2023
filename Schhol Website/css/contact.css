@@ -51,6 +51,9 @@ input[type=text],input[type=email],input[type=tel],textarea{
     border: 1px solid #f1f1f1f1;
     border-radius: 10px;
 }
+textarea{
+    resize: vertical;
+}
 input[type=text]:focus,
 input[type=email]:focus,
 input[type=tel]:focus,

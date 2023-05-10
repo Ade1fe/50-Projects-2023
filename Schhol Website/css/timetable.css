@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    /* border: 2px solid green; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+}
+
+
+
+:root {
+    --main-color: #f77f00;
+    --black: #000;
+    --white: #fff;
+    --hover-color: #dd730f;
+    --footer-black: #0d1b2a;
+    /* font-size: 14px; */
+    --font-family-small: 14px;
+    /* --normal-font-family : Verdana, Geneva, Tahoma, sans-serif; */
+    --special-font-family: "Sofia", sans-serif;
+}
+
+
+/* ---------       ------------------- */
+.table {
+    /* border: 2px solid red; */
+    overflow-x: auto;
+    background-color: var(--white);
+    padding: 4rem 1rem;
+    
+}
+
+table {
+    background-color: var(--white);
+    color: var(--black);
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+}
+
+.table th {
+    color: var(--black);
+    padding: 1rem;
+}
+
+tr,
+td,
+th {
+    border: 1px solid #ddd;
+}
+
+.table td {
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.table span {
+    font-weight: bold;
+}
+
+.table td span {
+    display: block;
+    color: var(--main-color);
+}
+
+.table td span:first-child {
+    margin-bottom: 5px;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+
+    .table td span {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .table td span {
+        font-size: 13px;
+    }
+}
+

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    /* border: 2px solid green; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+}
+
+
+
+:root {
+    --main-color: #f77f00;
+    --black: #000;
+    --white: #fff;
+    --hover-color: #dd730f;
+    --footer-black: #0d1b2a;
+    /* font-size: 14px; */
+    --font-family-small: 14px;
+    /* --normal-font-family : Verdana, Geneva, Tahoma, sans-serif; */
+    --special-font-family: "Sofia", sans-serif;
+    --color-aqua: rgba(0, 255, 255, 0.5);
+    /* half-transparent aqua */
+    --color-yellow: rgba(255, 255, 0, 0.5);
+    /* half-transparent yellow */
+    --color-purple: rgba(128, 0, 128, 0.5);
+    /* half-transparent purple */
+    --color-orange: rgba(255, 165, 0, 0.5);
+    --color-white: white;
+}
+
+
+/* ---------       ------------------- */
+.hold-it{
+    padding: 4rem 2rem;
+    background-color: var(--white);
+}
+
+   .details {
+    background-color: var(--white);
+       color: #333;
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 1rem;
+       padding: 2rem 1rem;
+       /* border: 2px solid red; */
+       border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+   }
+   .parent, .child{
+    width: 40%;
+   }
+    .parent h2, .child h2{
+        padding: 1rem;
+    }
+   input[type=text],
+   input[type=email],
+   input[type=tel],
+   input[type=text] {
+       padding: 1rem 1rem;
+       border: #ddd 1px solid;
+       margin-bottom: 1rem;
+       width: 100%;
+       border-radius: 10px;
+       outline: 0;
+   }
+ input[type=text]:focus,
+ input[type=email]:focus,
+ input[type=tel]:focus,
+ input[type=text]:focus{
+    border: var(--hover-color) 1px solid;
+ }
+   input[type=radio] {
+       margin-right: 0.5rem;
+   }
+
+   label {
+       /* display: block; */
+       font-weight: bold;
+       margin-bottom: 0.5rem;
+   }
+ .radio{
+    margin: 5px 0;
+    /* border: 2px solid red; */
+ }
+textarea {
+    padding: 0.5rem 1rem;
+    border: #ddd 1px solid;
+    margin-bottom: 1rem;
+    width: 83%;
+    border-radius: 10px;
+    resize: vertical;
+}
+
+   button {
+       background-color: var(--main-color);
+       color: #fff;
+       border: none;
+       padding: 1rem 1rem;
+        border-radius: 10px;
+       cursor: pointer;
+       width: 83%;
+       font-size: 18px;
+   }
+
+   button:hover {
+       background-color: var(--hover-color);
+   }
+
+
+
+
+   @media (max-width: 600px) {
+         .details {
+            display: grid;
+            justify-content: center;
+        }
+        .parent, .child, textarea , button{
+            width: 100%;
+        }
+   }

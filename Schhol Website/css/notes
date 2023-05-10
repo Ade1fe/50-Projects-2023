@@ -62,50 +62,37 @@ header ul {
     display: flex;
     justify-content: space-evenly;
     /* border: 2px solid red; */
-    gap: 0 10px;
+    gap: 0 20px;
     background-color: var(--white);
     
 }
 
 
 header ul li {
-    margin: 0 10px;
+    margin: 0 20px;
    
     transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
 }
-header ul li a {
+header ul li a{
     text-decoration: none;
     padding: 0.5rem 0.3rem;
     font-weight: bold;
     color: var(--black);
     font-size: 1.1rem;
-    position: relative;
 }
-
-header ul li a::before {
-    content: "";
-    width: 30px;
-    height: 5px;
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 3px;
-    background-color: var(--main-color);
-    transition: width 0.3s ease;
-    /* Add a transition for the width property */
-}
-
-header ul li a:hover::before {
-    display: block;
-    width: 100%;
-    /* Expand the width of the pseudo-element on hover */
+header ul li a:hover {
+    background-color: var(--hover-color);
+    border-radius: 50%;
+    color: var(--white);
+    font-weight: 0;
+    cursor: pointer;
+   
 }
 .cts{
     background-color: var(--main-color);
     color: var(--white);
     padding: 0.5rem 0.7rem;
     border-radius: 10px;
-    margin-right: 20px;
 }
 
 .cancel-icon, .menu-icon {
@@ -367,7 +354,7 @@ footer{
 
 
 
-@media (max-width: 980px) {
+@media (max-width: 900px) {
     header {
         flex-wrap: wrap;
     }
@@ -396,9 +383,6 @@ footer{
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
        
     }
-    .cts{
-    margin-right: 0px;
-}
    
     header ul li {
         margin: 20px 0;
