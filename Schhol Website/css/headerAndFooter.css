@@ -52,7 +52,7 @@ header div h2 {
     margin-left: 20px;
 }
 .logo h2{
-    color: var(--black);
+    color: var(--black) ;
 }
 
 header ul {
